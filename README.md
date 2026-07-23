@@ -81,24 +81,10 @@ pull request without deploying, so breakage surfaces before merge.
 
 ### Custom domain
 
-If you're pointing a custom domain at this site, add it under **Settings →
-Pages → Custom domain** and create the corresponding DNS record (an `A`
-record to GitHub's Pages IPs, or a `CNAME` record, depending on whether it's
-an apex or subdomain — see [GitHub's docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)).
-No changes to this repo are needed — `vite.config.ts` already defaults to
-serving from `/`, which is what a custom domain needs.
-
-### No custom domain
-
-If instead you're serving from `https://<user>.github.io/<repo>/`, the app
-needs to know it isn't at the domain root. Set the `VITE_BASE_PATH` env var
-for the build step in `.github/workflows/deploy.yml` (there's a commented
-example already in the file):
-
-```yaml
-env:
-  VITE_BASE_PATH: /jwaspin-dev/
-```
+This site deploys to **[jwaspin.dev](https://jwaspin.dev/)**, configured as
+the repository's GitHub Pages custom domain. DNS and the Pages custom-domain
+setting must remain configured for that hostname. `vite.config.ts` correctly
+serves the app from `/`; do not set `VITE_BASE_PATH` to `/jwaspin-dev/`.
 
 ## Project structure
 
