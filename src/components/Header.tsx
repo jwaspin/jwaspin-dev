@@ -1,6 +1,7 @@
 import { BookOpen, Building2, LayoutGrid, Shapes, Sparkles, SunMedium, Moon } from 'lucide-react'
 import type { Theme } from '../hooks/useTheme'
 import { GithubMark } from './GithubMark'
+import packageMetadata from '../../package.json'
 
 interface HeaderProps {
   theme: Theme
@@ -41,6 +42,13 @@ export function Header({
         </nav>
 
         <div className="flex shrink-0 items-center gap-1.5">
+          <span
+            className="inline-flex h-7 items-center rounded-md bg-slate-100 px-2 font-mono text-xs font-medium text-slate-500 ring-1 ring-slate-200 dark:bg-slate-900 dark:text-slate-400 dark:ring-slate-800"
+            title={`jwaspin.dev version ${packageMetadata.version}`}
+            aria-label={`Version ${packageMetadata.version}`}
+          >
+            v{packageMetadata.version}
+          </span>
           <a
             href="https://github.com/jwaspin/jwaspin-dev"
             target="_blank"
