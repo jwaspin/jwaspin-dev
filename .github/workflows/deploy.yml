@@ -10,6 +10,11 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  # deploy-pages@v4 is the latest stable Pages deployment action but still
+  # declares node20. GitHub supports opting JavaScript actions into Node 24.
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 # Only one Pages deployment at a time; let an in-flight run finish rather
 # than cancelling it mid-upload.
 concurrency:
@@ -21,16 +26,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v4.4.0
         with:
           version: 11.15.1
           run_install: false
 
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 24
           cache: pnpm
@@ -40,11 +45,8 @@ jobs:
 
       - name: Build
         run: pnpm build
-        # Serving from a custom domain (recommended, see README) needs no
-        # base path. Serving from https://<user>.github.io/<repo>/ instead
-        # requires VITE_BASE_PATH="/<repo>/" here.
-        # env:
-        #   VITE_BASE_PATH: /jwaspin-dev/
+        # This site deploys to the configured custom domain jwaspin.dev.
+        # Keep Vite's base path at "/"; do not set VITE_BASE_PATH to the repo name.
 
       - name: Upload build artifact
         uses: actions/upload-pages-artifact@v3
