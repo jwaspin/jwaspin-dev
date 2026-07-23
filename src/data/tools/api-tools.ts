@@ -58,6 +58,15 @@ export const apiTools: Tool[] = [
     pricing: 'free',
   },
   {
+    id: 'json-schema',
+    name: 'JSON Schema',
+    description: 'Declarative vocabulary for validating and documenting JSON data structures.',
+    url: 'https://json-schema.org/learn/getting-started-step-by-step',
+    categoryId: 'api-tools',
+    tags: ['json', 'schema', 'validation'],
+    pricing: 'free',
+  },
+  {
     id: 'grpc',
     name: 'gRPC',
     description: 'High-performance RPC framework using Protocol Buffers.',

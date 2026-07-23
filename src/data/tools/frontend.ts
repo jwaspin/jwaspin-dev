@@ -130,4 +130,13 @@ export const frontend: Tool[] = [
     tags: ['web-components'],
     pricing: 'free',
   },
+  {
+    id: 'sveltekit',
+    name: 'SvelteKit',
+    description: 'Application framework for building full-featured web apps with Svelte.',
+    url: 'https://svelte.dev/docs/kit',
+    categoryId: 'frontend',
+    tags: ['svelte', 'ssr', 'meta-framework'],
+    pricing: 'free',
+  },
 ]

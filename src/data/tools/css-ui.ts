@@ -129,4 +129,13 @@ export const cssUi: Tool[] = [
     tags: ['css-in-js'],
     pricing: 'free',
   },
+  {
+    id: 'unocss',
+    name: 'UnoCSS',
+    description: 'Instant, on-demand atomic CSS engine with highly configurable presets.',
+    url: 'https://unocss.dev/guide/',
+    categoryId: 'css-ui',
+    tags: ['utility-css', 'atomic-css'],
+    pricing: 'free',
+  },
 ]

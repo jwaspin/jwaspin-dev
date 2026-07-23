@@ -1,5 +1,7 @@
-import { LayoutGrid } from 'lucide-react'
+import { Building2, LayoutGrid, Shapes } from 'lucide-react'
 import type { Category } from '../data/types'
+
+export type SortOrder = 'curated' | 'az' | 'za'
 
 interface CategoryNavProps {
   categories: Category[]
@@ -7,6 +9,13 @@ interface CategoryNavProps {
   totalCount: number
   selected: string | null
   onSelect: (id: string | null) => void
+  showingCategories: boolean
+  onShowCategories: () => void
+  showingOwners: boolean
+  ownerCount: number
+  onShowOwners: () => void
+  sortOrder: SortOrder
+  onSortChange: (order: SortOrder) => void
   variant: 'sidebar' | 'chips'
 }
 
@@ -16,50 +25,118 @@ export function CategoryNav({
   totalCount,
   selected,
   onSelect,
+  showingCategories,
+  onShowCategories,
+  showingOwners,
+  ownerCount,
+  onShowOwners,
+  sortOrder,
+  onSortChange,
   variant,
 }: CategoryNavProps) {
   if (variant === 'chips') {
     return (
-      <div className="scrollbar-thin flex gap-2 overflow-x-auto pb-1">
-        <NavChip
-          label="All"
-          count={totalCount}
-          active={selected === null}
-          onClick={() => onSelect(null)}
-        />
-        {categories.map((c) => (
+      <div className="space-y-3">
+        <div className="scrollbar-thin flex gap-2 overflow-x-auto pb-1">
           <NavChip
-            key={c.id}
-            label={c.name}
-            count={counts.get(c.id) ?? 0}
-            active={selected === c.id}
-            onClick={() => onSelect(c.id)}
+            label="All tools"
+            count={totalCount}
+            active={!showingCategories && !showingOwners && selected === null}
+            onClick={() => onSelect(null)}
           />
-        ))}
+          <NavChip
+            label="Categories"
+            count={categories.length}
+            active={showingCategories}
+            onClick={onShowCategories}
+          />
+          <NavChip
+            label="Organizations"
+            count={ownerCount}
+            active={showingOwners}
+            onClick={onShowOwners}
+          />
+          {categories.map((c) => (
+            <NavChip
+              key={c.id}
+              label={c.name}
+              count={counts.get(c.id) ?? 0}
+              active={!showingCategories && !showingOwners && selected === c.id}
+              onClick={() => onSelect(c.id)}
+            />
+          ))}
+        </div>
+        <SortSelect value={sortOrder} onChange={onSortChange} compact />
       </div>
     )
   }
 
   return (
-    <nav className="scrollbar-thin sticky top-20 max-h-[calc(100svh-6rem)] shrink-0 space-y-0.5 overflow-y-auto pr-2">
-      <NavRow
-        icon={LayoutGrid}
-        label="All Tools"
-        count={totalCount}
-        active={selected === null}
-        onClick={() => onSelect(null)}
-      />
-      {categories.map((c) => (
+    <div className="fixed top-22 bottom-14 w-72 shrink-0">
+      <div className="mb-3 pr-2">
+        <SortSelect value={sortOrder} onChange={onSortChange} />
+      </div>
+      <nav className="space-y-0.5 pr-2">
         <NavRow
-          key={c.id}
-          icon={c.icon}
-          label={c.name}
-          count={counts.get(c.id) ?? 0}
-          active={selected === c.id}
-          onClick={() => onSelect(c.id)}
+          icon={LayoutGrid}
+          label="All Tools"
+          count={totalCount}
+          active={!showingCategories && !showingOwners && selected === null}
+          onClick={() => onSelect(null)}
         />
-      ))}
-    </nav>
+        <NavRow
+          icon={Shapes}
+          label="All Categories"
+          count={categories.length}
+          active={showingCategories}
+          onClick={onShowCategories}
+        />
+        <NavRow
+          icon={Building2}
+          label="Organizations"
+          count={ownerCount}
+          active={showingOwners}
+          onClick={onShowOwners}
+        />
+        <div className="my-2 border-t border-slate-200 dark:border-slate-800" />
+        {categories.map((c) => (
+          <NavRow
+            key={c.id}
+            icon={c.icon}
+            label={c.name}
+            count={counts.get(c.id) ?? 0}
+            active={!showingCategories && !showingOwners && selected === c.id}
+            onClick={() => onSelect(c.id)}
+          />
+        ))}
+      </nav>
+    </div>
+  )
+}
+
+function SortSelect({
+  value,
+  onChange,
+  compact = false,
+}: {
+  value: SortOrder
+  onChange: (order: SortOrder) => void
+  compact?: boolean
+}) {
+  return (
+    <label className={`flex items-center gap-2 ${compact ? 'max-w-xs' : 'w-full'}`}>
+      <span className="shrink-0 text-xs font-medium text-slate-500 dark:text-slate-400">Sort</span>
+      <select
+        value={value}
+        onChange={(event) => onChange(event.target.value as SortOrder)}
+        aria-label="Sort categories and tools"
+        className="min-w-0 flex-1 rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-sm text-slate-700 shadow-sm outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/20 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300"
+      >
+        <option value="curated">Curated</option>
+        <option value="az">Alphabetical (A–Z)</option>
+        <option value="za">Alphabetical (Z–A)</option>
+      </select>
+    </label>
   )
 }
 
@@ -79,7 +156,7 @@ function NavRow({
   return (
     <button
       onClick={onClick}
-      className={`flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-left text-sm transition ${
+      className={`flex w-full items-center gap-2.5 rounded-lg px-2.5 py-1 text-left text-sm transition ${
         active
           ? 'bg-indigo-50 font-medium text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-300'
           : 'text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-900'

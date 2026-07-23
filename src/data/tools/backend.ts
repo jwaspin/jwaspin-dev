@@ -130,4 +130,22 @@ export const backend: Tool[] = [
     tags: ['node', 'middleware'],
     pricing: 'free',
   },
+  {
+    id: 'hono',
+    name: 'Hono',
+    description: 'Small, fast web framework that runs across edge and JavaScript runtimes.',
+    url: 'https://hono.dev/docs/',
+    categoryId: 'backend',
+    tags: ['typescript', 'edge', 'web-standards'],
+    pricing: 'free',
+  },
+  {
+    id: 'elysia',
+    name: 'Elysia',
+    description: 'Ergonomic, type-safe web framework optimized for Bun.',
+    url: 'https://elysiajs.com/',
+    categoryId: 'backend',
+    tags: ['typescript', 'bun', 'api'],
+    pricing: 'free',
+  },
 ]

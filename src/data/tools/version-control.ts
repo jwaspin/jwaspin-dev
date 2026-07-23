@@ -84,4 +84,13 @@ export const versionControl: Tool[] = [
     tags: ['large-files'],
     pricing: 'free',
   },
+  {
+    id: 'jujutsu',
+    name: 'Jujutsu',
+    description: 'Git-compatible version control system with a simpler, powerful workflow model.',
+    url: 'https://jj-vcs.github.io/jj/latest/',
+    categoryId: 'version-control',
+    tags: ['vcs', 'git-compatible'],
+    pricing: 'free',
+  },
 ]

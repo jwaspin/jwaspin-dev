@@ -9,7 +9,7 @@ export function Hero({ toolCount, categoryCount }: { toolCount: number; category
         }}
         aria-hidden="true"
       />
-      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14">
+      <div className="mx-auto max-w-[86rem] px-4 py-10 sm:px-6 sm:py-14">
         <h1 className="max-w-2xl text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl dark:text-slate-100">
           A curated map of the developer tool landscape
         </h1>

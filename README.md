@@ -27,9 +27,17 @@ All content lives under [src/data/](src/data/):
   `tags`, `pricing` (`free` / `freemium` / `paid`), and `featured`.
 - **Add a category**: add an entry to the `categories` array in
   [src/data/categories.ts](src/data/categories.ts) (pick a [lucide](https://lucide.dev/icons/)
-  icon), then create `src/data/tools/<id>.ts` exporting a `Tool[]`, and wire
+  icon and a parent `groupId`), then create `src/data/tools/<id>.ts` exporting a `Tool[]`, and wire
   it into the aggregate list in [src/data/index.ts](src/data/index.ts).
 - **Remove a tool**: delete its entry from the relevant category file.
+- **Group tools by organization**: add or update an entry in
+  [src/data/owners.ts](src/data/owners.ts). Organization pages use explicit tool IDs,
+  so a product can keep its functional category while appearing with its company's,
+  foundation's, or open-source group's other tools.
+- **Add an ecosystem library**: add it to `libraries` in
+  [src/data/libraries.ts](src/data/libraries.ts). Libraries belong to a
+  `LibraryEcosystem`, and each ecosystem links back to an existing top-level
+  tool or language through `toolId`.
 
 There's a helper script to sanity-check the data (duplicate ids, tools
 pointing at a category that doesn't exist, per-category counts):
@@ -49,11 +57,11 @@ and nothing is persisted at runtime (see Deployment below).
 ## Local development
 
 ```bash
-npm install
-npm run dev       # http://localhost:5173
-npm run build     # type-check + production build to dist/
-npm run preview   # serve the production build locally
-npm run lint      # oxlint
+pnpm install
+pnpm dev       # http://localhost:5173
+pnpm build     # type-check + production build to dist/
+pnpm preview   # serve the production build locally
+pnpm lint      # oxlint
 ```
 
 ## Deployment
@@ -97,8 +105,10 @@ env:
 ```
 src/
   data/
-    types.ts            Tool / Category / Pricing types
+    types.ts             Tool, category, organization, and library types
     categories.ts        Category list (order = display order)
+    libraries.ts         Ecosystem definitions and library catalog
+    owners.ts            Organization-to-tool relationships
     tools/*.ts            One file per category, exports a Tool[]
     index.ts              Aggregates everything the app renders
   components/            Presentational React components
