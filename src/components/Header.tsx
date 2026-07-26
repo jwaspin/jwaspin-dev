@@ -7,7 +7,7 @@ interface HeaderProps {
   theme: Theme
   onToggleTheme: () => void
   activeView: 'tools' | 'categories' | 'organizations' | 'libraries' | 'references'
-  onShowTools: () => void
+  onShowLanding: () => void
   onShowCategories: () => void
   onShowOrganizations: () => void
   onShowLibraries: () => void
@@ -18,7 +18,7 @@ export function Header({
   theme,
   onToggleTheme,
   activeView,
-  onShowTools,
+  onShowLanding,
   onShowCategories,
   onShowOrganizations,
   onShowLibraries,
@@ -27,7 +27,7 @@ export function Header({
   return (
     <header className="sticky top-0 z-30 border-b border-slate-200/80 bg-slate-50/85 backdrop-blur-sm dark:border-slate-800/80 dark:bg-slate-950/85">
       <div className="mx-auto flex h-16 max-w-[86rem] items-center gap-4 px-4 sm:px-6">
-        <button onClick={onShowTools} className="flex shrink-0 items-center gap-2">
+        <button onClick={onShowLanding} className="flex shrink-0 items-center gap-2">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-indigo-500 to-violet-500 text-white shadow-sm">
             <Sparkles className="h-4.5 w-4.5" aria-hidden="true" />
           </span>

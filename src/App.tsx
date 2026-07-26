@@ -21,6 +21,7 @@ import { LibraryCard } from './components/LibraryCard'
 import { useLibrarySearch } from './hooks/useLibrarySearch'
 import { ReferencesPage } from './components/ReferencesPage'
 import { ReferenceNav } from './components/ReferenceNav'
+import { LandingPage } from './components/LandingPage'
 
 function compareByName(a: { name: string }, b: { name: string }, order: SortOrder) {
   const comparison = a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })
@@ -31,7 +32,7 @@ function App() {
   const { theme, toggleTheme } = useTheme()
   const [query, setQuery] = useState('')
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
-  const [view, setView] = useState<'tools' | 'categories' | 'owners' | 'owner' | 'libraries' | 'references'>('tools')
+  const [view, setView] = useState<'landing' | 'tools' | 'categories' | 'owners' | 'owner' | 'libraries' | 'references'>('landing')
   const [selectedOwnerId, setSelectedOwnerId] = useState<string | null>(null)
   const [selectedEcosystem, setSelectedEcosystem] = useState<string | null>(null)
   const [selectedSourceType, setSelectedSourceType] = useState<ReferenceSourceType | null>(null)
@@ -83,6 +84,15 @@ function App() {
   }
 
   const showTools = () => selectCategory(null)
+
+  const showLanding = () => {
+    setView('landing')
+    setSelectedCategory(null)
+    setSelectedOwnerId(null)
+    setSelectedEcosystem(null)
+    setSelectedSourceType(null)
+    setQuery('')
+  }
 
   const showOwners = () => {
     setView('owners')
@@ -145,6 +155,7 @@ function App() {
   const isLibraryView = view === 'libraries'
   const isOwnersView = view === 'owners' || view === 'owner'
   const isReferencesView = view === 'references'
+  const isLandingView = view === 'landing'
 
   return (
     <div className="flex min-h-screen flex-col pb-20 sm:pb-14">
@@ -162,13 +173,28 @@ function App() {
                   ? 'references'
                   : 'tools'
         }
-        onShowTools={showTools}
+        onShowLanding={showLanding}
         onShowCategories={showCategories}
         onShowOrganizations={showOwners}
         onShowLibraries={showLibraries}
         onShowReferences={showReferences}
       />
 
+      {isLandingView ? (
+        <div className="mx-auto w-full max-w-[86rem] flex-1 px-4 py-6 sm:px-6">
+          <LandingPage
+            categoryCount={categories.length}
+            toolCount={tools.length}
+            ownerCount={productOwners.length}
+            libraryCount={libraries.length}
+            referenceCount={references.length}
+            onShowCategories={showCategories}
+            onShowOrganizations={showOwners}
+            onShowLibraries={showLibraries}
+            onShowReferences={showReferences}
+          />
+        </div>
+      ) : (
       <div className="mx-auto flex w-full max-w-[86rem] flex-1 gap-8 px-4 py-6 sm:px-6">
         <div className="hidden w-72 shrink-0 lg:block">
           {isLibraryView ? (
@@ -347,6 +373,7 @@ function App() {
           </div>
         </main>
       </div>
+      )}
 
       <Footer />
     </div>
