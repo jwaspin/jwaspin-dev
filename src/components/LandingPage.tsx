@@ -1,4 +1,4 @@
-import { ArrowRight, BookOpen, Building2, Landmark, Shapes } from 'lucide-react'
+import { ArrowRight, BookOpen, Building2, ScrollText, Shapes } from 'lucide-react'
 
 interface LandingDestination {
   icon: typeof Shapes
@@ -52,7 +52,7 @@ export function LandingPage({
       onClick: onShowLibraries,
     },
     {
-      icon: Landmark,
+      icon: ScrollText,
       title: 'References',
       description: 'Durable essays, methodologies, and guides worth reading straight from the source.',
       meta: `${referenceCount} references`,

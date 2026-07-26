@@ -1,4 +1,4 @@
-import { Landmark } from 'lucide-react'
+import { ScrollText } from 'lucide-react'
 import type { Reference, ReferenceSourceType, ReferenceSourceTypeInfo } from '../data/types'
 import type { SortOrder } from './CategoryNav'
 
@@ -41,10 +41,10 @@ export function ReferenceNav({
     <div className="fixed top-22 bottom-14 w-72 shrink-0">
       <div className="mb-3 pr-2"><Sort value={sortOrder} onChange={onSortChange} /></div>
       <nav className="space-y-0.5 pr-2" aria-label="Reference source types">
-        <Row icon={Landmark} label="All References" count={totalCount} active={selected === null} onClick={() => onSelect(null)} />
+        <Row icon={ScrollText} label="All References" count={totalCount} active={selected === null} onClick={() => onSelect(null)} />
         <div className="my-2 border-t border-slate-200 dark:border-slate-800" />
         {sourceTypes.map((sourceType) => (
-          <Row key={sourceType.id} icon={Landmark} label={sourceType.name} count={countFor(sourceType.id)} active={selected === sourceType.id} onClick={() => onSelect(sourceType.id)} />
+          <Row key={sourceType.id} icon={ScrollText} label={sourceType.name} count={countFor(sourceType.id)} active={selected === sourceType.id} onClick={() => onSelect(sourceType.id)} />
         ))}
       </nav>
     </div>
@@ -62,7 +62,7 @@ function Sort({ value, onChange }: { value: SortOrder; onChange: (order: SortOrd
   )
 }
 
-function Row({ icon: Icon, label, count, active, onClick }: { icon: typeof Landmark; label: string; count: number; active: boolean; onClick: () => void }) {
+function Row({ icon: Icon, label, count, active, onClick }: { icon: typeof ScrollText; label: string; count: number; active: boolean; onClick: () => void }) {
   return <button onClick={onClick} className={`flex w-full items-center gap-2.5 rounded-lg px-2.5 py-1 text-left text-sm transition ${active ? 'bg-indigo-50 font-medium text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-300' : 'text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-900'}`}><Icon className="h-4 w-4 shrink-0" /><span className="flex-1 truncate">{label}</span><span className="text-xs tabular-nums text-slate-400 dark:text-slate-600">{count}</span></button>
 }
 

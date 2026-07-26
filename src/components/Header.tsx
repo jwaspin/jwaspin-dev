@@ -1,4 +1,4 @@
-import { BookOpen, Building2, Landmark, Shapes, Sparkles, SunMedium, Moon } from 'lucide-react'
+import { BookOpen, Building2, ScrollText, Shapes, Sparkles, SunMedium, Moon } from 'lucide-react'
 import type { Theme } from '../hooks/useTheme'
 import { GithubMark } from './GithubMark'
 import packageMetadata from '../../package.json'
@@ -40,7 +40,7 @@ export function Header({
           <HeaderNavItem icon={Shapes} label="Categories" active={activeView === 'categories'} onClick={onShowCategories} />
           <HeaderNavItem icon={Building2} label="Organizations" active={activeView === 'organizations'} onClick={onShowOrganizations} />
           <HeaderNavItem icon={BookOpen} label="Libraries" active={activeView === 'libraries'} onClick={onShowLibraries} />
-          <HeaderNavItem icon={Landmark} label="References" active={activeView === 'references'} onClick={onShowReferences} />
+          <HeaderNavItem icon={ScrollText} label="References" active={activeView === 'references'} onClick={onShowReferences} />
         </nav>
 
         <div className="flex shrink-0 items-center gap-1.5">

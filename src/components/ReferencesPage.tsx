@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowUpRight, Landmark } from 'lucide-react'
+import { ArrowLeft, ArrowUpRight, ScrollText } from 'lucide-react'
 import type { Reference, ReferenceSourceType, ReferenceSourceTypeInfo } from '../data/types'
 import { ToolIcon } from './ToolIcon'
 import { GithubMark } from './GithubMark'
@@ -42,7 +42,7 @@ export function ReferencesPage({
             <section key={sourceType.id}>
               <div className="mb-4 flex items-start gap-3">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600 dark:bg-indigo-500/10 dark:text-indigo-400">
-                  <Landmark className="h-5 w-5" aria-hidden="true" />
+                  <ScrollText className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <div>
                   <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
