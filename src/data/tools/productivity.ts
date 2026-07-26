@@ -130,4 +130,13 @@ export const productivity: Tool[] = [
     tags: ['cli', 'cheat-sheet'],
     pricing: 'free',
   },
+  {
+    id: 'gnu-stow',
+    name: 'GNU Stow',
+    description: 'Symlink farm manager for keeping dotfiles and installed packages organized.',
+    url: 'https://www.gnu.org/software/stow/',
+    categoryId: 'productivity',
+    tags: ['symlinks', 'dotfiles', 'cli'],
+    pricing: 'free',
+  },
 ]

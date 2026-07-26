@@ -1,19 +1,15 @@
-import { Building2, LayoutGrid, Shapes } from 'lucide-react'
+import { Shapes } from 'lucide-react'
 import type { Category } from '../data/types'
 
-export type SortOrder = 'curated' | 'az' | 'za'
+export type SortOrder = 'az' | 'za'
 
 interface CategoryNavProps {
   categories: Category[]
   counts: Map<string, number>
-  totalCount: number
   selected: string | null
   onSelect: (id: string | null) => void
   showingCategories: boolean
   onShowCategories: () => void
-  showingOwners: boolean
-  ownerCount: number
-  onShowOwners: () => void
   sortOrder: SortOrder
   onSortChange: (order: SortOrder) => void
   variant: 'sidebar' | 'chips'
@@ -22,14 +18,10 @@ interface CategoryNavProps {
 export function CategoryNav({
   categories,
   counts,
-  totalCount,
   selected,
   onSelect,
   showingCategories,
   onShowCategories,
-  showingOwners,
-  ownerCount,
-  onShowOwners,
   sortOrder,
   onSortChange,
   variant,
@@ -39,29 +31,17 @@ export function CategoryNav({
       <div className="space-y-3">
         <div className="scrollbar-thin flex gap-2 overflow-x-auto pb-1">
           <NavChip
-            label="All tools"
-            count={totalCount}
-            active={!showingCategories && !showingOwners && selected === null}
-            onClick={() => onSelect(null)}
-          />
-          <NavChip
             label="Categories"
             count={categories.length}
             active={showingCategories}
             onClick={onShowCategories}
-          />
-          <NavChip
-            label="Organizations"
-            count={ownerCount}
-            active={showingOwners}
-            onClick={onShowOwners}
           />
           {categories.map((c) => (
             <NavChip
               key={c.id}
               label={c.name}
               count={counts.get(c.id) ?? 0}
-              active={!showingCategories && !showingOwners && selected === c.id}
+              active={!showingCategories && selected === c.id}
               onClick={() => onSelect(c.id)}
             />
           ))}
@@ -78,25 +58,11 @@ export function CategoryNav({
       </div>
       <nav className="space-y-0.5 pr-2">
         <NavRow
-          icon={LayoutGrid}
-          label="All Tools"
-          count={totalCount}
-          active={!showingCategories && !showingOwners && selected === null}
-          onClick={() => onSelect(null)}
-        />
-        <NavRow
           icon={Shapes}
           label="All Categories"
           count={categories.length}
           active={showingCategories}
           onClick={onShowCategories}
-        />
-        <NavRow
-          icon={Building2}
-          label="Organizations"
-          count={ownerCount}
-          active={showingOwners}
-          onClick={onShowOwners}
         />
         <div className="my-2 border-t border-slate-200 dark:border-slate-800" />
         {categories.map((c) => (
@@ -105,7 +71,7 @@ export function CategoryNav({
             icon={c.icon}
             label={c.name}
             count={counts.get(c.id) ?? 0}
-            active={!showingCategories && !showingOwners && selected === c.id}
+            active={!showingCategories && selected === c.id}
             onClick={() => onSelect(c.id)}
           />
         ))}
@@ -132,7 +98,6 @@ function SortSelect({
         aria-label="Sort categories and tools"
         className="min-w-0 flex-1 rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-sm text-slate-700 shadow-sm outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/20 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300"
       >
-        <option value="curated">Curated</option>
         <option value="az">Alphabetical (A–Z)</option>
         <option value="za">Alphabetical (Z–A)</option>
       </select>

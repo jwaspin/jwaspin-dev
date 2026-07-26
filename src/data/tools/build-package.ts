@@ -110,6 +110,7 @@ export const buildPackage: Tool[] = [
     categoryId: 'build-package',
     tags: ['transpiler', 'javascript'],
     pricing: 'free',
+    githubUrl: 'https://github.com/babel/babel',
   },
   {
     id: 'homebrew',
@@ -119,5 +120,6 @@ export const buildPackage: Tool[] = [
     categoryId: 'build-package',
     tags: ['package-manager', 'macos'],
     pricing: 'free',
+    githubUrl: 'https://github.com/Homebrew/brew',
   },
 ]

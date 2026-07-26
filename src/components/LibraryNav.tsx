@@ -54,7 +54,7 @@ function Sort({ value, onChange }: { value: SortOrder; onChange: (order: SortOrd
     <label className="flex w-full items-center gap-2">
       <span className="shrink-0 text-xs font-medium text-slate-500 dark:text-slate-400">Sort</span>
       <select value={value} onChange={(event) => onChange(event.target.value as SortOrder)} className="min-w-0 flex-1 rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-sm text-slate-700 shadow-sm outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-500/20 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
-        <option value="curated">Curated</option><option value="az">Alphabetical (A–Z)</option><option value="za">Alphabetical (Z–A)</option>
+        <option value="az">Alphabetical (A–Z)</option><option value="za">Alphabetical (Z–A)</option>
       </select>
     </label>
   )

@@ -230,5 +230,6 @@ export const databases: Tool[] = [
     categoryId: 'databases',
     tags: ['orm', 'nodejs'],
     pricing: 'free',
+    githubUrl: 'https://github.com/sequelize/sequelize',
   },
 ]

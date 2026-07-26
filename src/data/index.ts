@@ -22,9 +22,10 @@ import { productivity } from './tools/productivity'
 import { designAssets } from './tools/design-assets'
 import { productOwners } from './owners'
 import { libraries, libraryCountByEcosystem, libraryEcosystems } from './libraries'
+import { references, referenceSourceTypes } from './references'
 
-export type { Tool, Category, CategoryGroup, CategoryGroupId, ProductOwner, Library, LibraryEcosystem, Pricing } from './types'
-export { categories, categoryById, categoryGroups, productOwners, libraries, libraryCountByEcosystem, libraryEcosystems }
+export type { Tool, Category, CategoryGroup, CategoryGroupId, ProductOwner, Library, LibraryEcosystem, Pricing, Reference, ReferenceSourceType, ReferenceSourceTypeInfo } from './types'
+export { categories, categoryById, categoryGroups, productOwners, libraries, libraryCountByEcosystem, libraryEcosystems, references, referenceSourceTypes }
 
 /**
  * Every tool across every category, in category-declaration order.
