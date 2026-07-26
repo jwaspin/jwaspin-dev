@@ -1,6 +1,7 @@
-import { ArrowLeft, ArrowRight, Building2, ExternalLink } from 'lucide-react'
+import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react'
 import type { ProductOwner, Tool } from '../data/types'
 import { ToolCard } from './ToolCard'
+import { ToolIcon } from './ToolIcon'
 
 export function OwnersPage({
   owners,
@@ -30,9 +31,7 @@ export function OwnersPage({
         </button>
         <div className="mb-7 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div className="flex items-start gap-3">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 dark:bg-indigo-500/10 dark:text-indigo-400">
-              <Building2 className="h-5 w-5" aria-hidden="true" />
-            </span>
+            <ToolIcon name={selectedOwner.name} url={selectedOwner.url} size={44} />
             <div>
               <p className="text-sm font-medium text-indigo-600 dark:text-indigo-400">Organization</p>
               <h1 className="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
@@ -83,9 +82,7 @@ export function OwnersPage({
             onClick={() => onSelect(owner.id)}
             className="group flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-4 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-indigo-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-indigo-500/50"
           >
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600 dark:bg-indigo-500/10 dark:text-indigo-400">
-              <Building2 className="h-5 w-5" aria-hidden="true" />
-            </span>
+            <ToolIcon name={owner.name} url={owner.url} size={40} />
             <span className="min-w-0 flex-1">
               <span className="flex items-center justify-between gap-2 font-medium text-slate-900 dark:text-slate-100">
                 {owner.name}

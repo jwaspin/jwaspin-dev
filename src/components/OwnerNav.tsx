@@ -1,6 +1,8 @@
 import { Building2 } from 'lucide-react'
 import type { ProductOwner } from '../data/types'
 import type { SortOrder } from './CategoryNav'
+import { ToolIcon } from './ToolIcon'
+import type { ReactNode } from 'react'
 
 export function OwnerNav({
   owners,
@@ -34,13 +36,20 @@ export function OwnerNav({
   }
 
   return (
-    <div className="fixed top-22 bottom-14 w-72 shrink-0">
-      <div className="mb-3 pr-2"><Sort value={sortOrder} onChange={onSortChange} /></div>
-      <nav className="space-y-0.5 pr-2" aria-label="Organizations">
-        <Row icon={Building2} label="All Organizations" count={totalCount} active={selected === null} onClick={() => onSelect(null)} />
+    <div className="fixed top-22 bottom-14 flex w-72 shrink-0 flex-col">
+      <div className="mb-3 pr-2 shrink-0"><Sort value={sortOrder} onChange={onSortChange} /></div>
+      <nav className="scrollbar-thin flex-1 space-y-0.5 overflow-y-auto pr-2" aria-label="Organizations">
+        <Row icon={<Building2 className="h-4 w-4 shrink-0" />} label="All Organizations" count={totalCount} active={selected === null} onClick={() => onSelect(null)} />
         <div className="my-2 border-t border-slate-200 dark:border-slate-800" />
         {owners.map((owner) => (
-          <Row key={owner.id} icon={Building2} label={owner.name} count={owner.toolIds.length} active={selected === owner.id} onClick={() => onSelect(owner.id)} />
+          <Row
+            key={owner.id}
+            icon={<ToolIcon name={owner.name} url={owner.url} size={20} />}
+            label={owner.name}
+            count={owner.toolIds.length}
+            active={selected === owner.id}
+            onClick={() => onSelect(owner.id)}
+          />
         ))}
       </nav>
     </div>
@@ -58,8 +67,8 @@ function Sort({ value, onChange }: { value: SortOrder; onChange: (order: SortOrd
   )
 }
 
-function Row({ icon: Icon, label, count, active, onClick }: { icon: typeof Building2; label: string; count: number; active: boolean; onClick: () => void }) {
-  return <button onClick={onClick} className={`flex w-full items-center gap-2.5 rounded-lg px-2.5 py-1 text-left text-sm transition ${active ? 'bg-indigo-50 font-medium text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-300' : 'text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-900'}`}><Icon className="h-4 w-4 shrink-0" /><span className="flex-1 truncate">{label}</span><span className="text-xs tabular-nums text-slate-400 dark:text-slate-600">{count}</span></button>
+function Row({ icon, label, count, active, onClick }: { icon: ReactNode; label: string; count: number; active: boolean; onClick: () => void }) {
+  return <button onClick={onClick} className={`flex w-full items-center gap-2.5 rounded-lg px-2.5 py-1 text-left text-sm transition ${active ? 'bg-indigo-50 font-medium text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-300' : 'text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-900'}`}>{icon}<span className="flex-1 truncate">{label}</span><span className="text-xs tabular-nums text-slate-400 dark:text-slate-600">{count}</span></button>
 }
 
 function Chip({ label, count, active, onClick }: { label: string; count: number; active: boolean; onClick: () => void }) {

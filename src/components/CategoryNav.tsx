@@ -52,11 +52,11 @@ export function CategoryNav({
   }
 
   return (
-    <div className="fixed top-22 bottom-14 w-72 shrink-0">
-      <div className="mb-3 pr-2">
+    <div className="fixed top-22 bottom-14 flex w-72 shrink-0 flex-col">
+      <div className="mb-3 pr-2 shrink-0">
         <SortSelect value={sortOrder} onChange={onSortChange} />
       </div>
-      <nav className="space-y-0.5 pr-2">
+      <nav className="scrollbar-thin flex-1 space-y-0.5 overflow-y-auto pr-2">
         <NavRow
           icon={Shapes}
           label="All Categories"

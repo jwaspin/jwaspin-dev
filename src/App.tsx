@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { categories, categoryGroups, libraries, libraryCountByEcosystem, libraryEcosystems, productOwners, references, referenceSourceTypes, tools, toolCountByCategory } from './data'
+import { categories, categoryGroups, ecosystemIconUrl, libraries, libraryCountByEcosystem, libraryEcosystems, productOwners, references, referenceSourceTypes, tools, toolCountByCategory } from './data'
 import type { ReferenceSourceType } from './data'
 import { useTheme } from './hooks/useTheme'
 import { useToolSearch } from './hooks/useToolSearch'
@@ -202,6 +202,7 @@ function App() {
               variant="sidebar"
               ecosystems={sortedEcosystems}
               counts={libraryCountByEcosystem}
+              iconUrls={ecosystemIconUrl}
               totalCount={libraries.length}
               selected={selectedEcosystem}
               onSelect={selectEcosystem}
@@ -265,6 +266,7 @@ function App() {
                 variant="chips"
                 ecosystems={sortedEcosystems}
                 counts={libraryCountByEcosystem}
+                iconUrls={ecosystemIconUrl}
                 totalCount={libraries.length}
                 selected={selectedEcosystem}
                 onSelect={selectEcosystem}
@@ -323,7 +325,7 @@ function App() {
               librarySearchResults.length > 0 ? (
                 <section><h2 className="mb-4 text-sm font-medium text-slate-500 dark:text-slate-400">{librarySearchResults.length} result{librarySearchResults.length === 1 ? '' : 's'}</h2><div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{sortLibraries(librarySearchResults).map((library) => <LibraryCard key={library.id} library={library} />)}</div></section>
               ) : <EmptyState query={query} noun="libraries" browseLabel="ecosystem" />
-            ) : <LibrariesPage ecosystems={sortedEcosystems} libraries={sortLibraries(libraries)} selected={selectedEcosystem} onSelect={selectEcosystem} />
+            ) : <LibrariesPage ecosystems={sortedEcosystems} libraries={sortLibraries(libraries)} iconUrls={ecosystemIconUrl} selected={selectedEcosystem} onSelect={selectEcosystem} />
           ) : isSearching ? (
             searchResults.length > 0 ? (
               <section>

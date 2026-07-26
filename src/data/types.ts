@@ -70,6 +70,7 @@ export interface ReferenceSourceTypeInfo {
   id: ReferenceSourceType
   name: string
   description: string
+  icon: LucideIcon
 }
 
 export interface Reference {

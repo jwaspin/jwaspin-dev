@@ -1,10 +1,13 @@
-import { BookOpen, Code2 } from 'lucide-react'
+import { BookOpen } from 'lucide-react'
 import type { LibraryEcosystem } from '../data/types'
 import type { SortOrder } from './CategoryNav'
+import { ToolIcon } from './ToolIcon'
+import type { ReactNode } from 'react'
 
 export function LibraryNav({
   ecosystems,
   counts,
+  iconUrls,
   totalCount,
   selected,
   onSelect,
@@ -14,6 +17,7 @@ export function LibraryNav({
 }: {
   ecosystems: LibraryEcosystem[]
   counts: Map<string, number>
+  iconUrls: Map<string, string>
   totalCount: number
   selected: string | null
   onSelect: (id: string | null) => void
@@ -36,13 +40,20 @@ export function LibraryNav({
   }
 
   return (
-    <div className="fixed top-22 bottom-14 w-72 shrink-0">
-      <div className="mb-3 pr-2"><Sort value={sortOrder} onChange={onSortChange} /></div>
-      <nav className="space-y-0.5 pr-2" aria-label="Library ecosystems">
-        <Row icon={BookOpen} label="All Libraries" count={totalCount} active={selected === null} onClick={() => onSelect(null)} />
+    <div className="fixed top-22 bottom-14 flex w-72 shrink-0 flex-col">
+      <div className="mb-3 pr-2 shrink-0"><Sort value={sortOrder} onChange={onSortChange} /></div>
+      <nav className="scrollbar-thin flex-1 space-y-0.5 overflow-y-auto pr-2" aria-label="Library ecosystems">
+        <Row icon={<BookOpen className="h-4 w-4 shrink-0" />} label="All Libraries" count={totalCount} active={selected === null} onClick={() => onSelect(null)} />
         <div className="my-2 border-t border-slate-200 dark:border-slate-800" />
         {ecosystems.map((ecosystem) => (
-          <Row key={ecosystem.id} icon={Code2} label={ecosystem.name} count={counts.get(ecosystem.id) ?? 0} active={selected === ecosystem.id} onClick={() => onSelect(ecosystem.id)} />
+          <Row
+            key={ecosystem.id}
+            icon={<ToolIcon name={ecosystem.name} url={iconUrls.get(ecosystem.id) ?? ''} size={20} />}
+            label={ecosystem.name}
+            count={counts.get(ecosystem.id) ?? 0}
+            active={selected === ecosystem.id}
+            onClick={() => onSelect(ecosystem.id)}
+          />
         ))}
       </nav>
     </div>
@@ -60,8 +71,8 @@ function Sort({ value, onChange }: { value: SortOrder; onChange: (order: SortOrd
   )
 }
 
-function Row({ icon: Icon, label, count, active, onClick }: { icon: typeof Code2; label: string; count: number; active: boolean; onClick: () => void }) {
-  return <button onClick={onClick} className={`flex w-full items-center gap-2.5 rounded-lg px-2.5 py-1 text-left text-sm transition ${active ? 'bg-violet-50 font-medium text-violet-700 dark:bg-violet-500/10 dark:text-violet-300' : 'text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-900'}`}><Icon className="h-4 w-4 shrink-0" /><span className="flex-1 truncate">{label}</span><span className="text-xs tabular-nums text-slate-400 dark:text-slate-600">{count}</span></button>
+function Row({ icon, label, count, active, onClick }: { icon: ReactNode; label: string; count: number; active: boolean; onClick: () => void }) {
+  return <button onClick={onClick} className={`flex w-full items-center gap-2.5 rounded-lg px-2.5 py-1 text-left text-sm transition ${active ? 'bg-violet-50 font-medium text-violet-700 dark:bg-violet-500/10 dark:text-violet-300' : 'text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-900'}`}>{icon}<span className="flex-1 truncate">{label}</span><span className="text-xs tabular-nums text-slate-400 dark:text-slate-600">{count}</span></button>
 }
 
 function Chip({ label, count, active, onClick }: { label: string; count: number; active: boolean; onClick: () => void }) {

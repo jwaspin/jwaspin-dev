@@ -60,4 +60,9 @@ export const toolCountByCategory: Map<string, number> = tools.reduce((map, tool)
   return map
 }, new Map<string, number>())
 
+/** Favicon source for each library ecosystem, borrowed from the tool/language it extends. */
+export const ecosystemIconUrl: Map<string, string> = new Map(
+  libraryEcosystems.map((ecosystem) => [ecosystem.id, tools.find((tool) => tool.id === ecosystem.toolId)?.url ?? '']),
+)
+
 export const featuredTools: Tool[] = tools.filter((t) => t.featured)

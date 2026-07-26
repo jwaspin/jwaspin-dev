@@ -1,3 +1,4 @@
+import { BadgeCheck, Newspaper, PenLine } from 'lucide-react'
 import type { Reference, ReferenceSourceTypeInfo } from './types'
 
 export const referenceSourceTypes: ReferenceSourceTypeInfo[] = [
@@ -5,16 +6,19 @@ export const referenceSourceTypes: ReferenceSourceTypeInfo[] = [
     id: 'official',
     name: 'Official',
     description: "Maintained directly by the project or organization behind the methodology.",
+    icon: BadgeCheck,
   },
   {
     id: 'essay',
     name: 'Essay',
     description: "One author's original write-up that became the de facto reference.",
+    icon: PenLine,
   },
   {
     id: 'publisher',
     name: 'Publisher',
     description: 'Guides and analysis from an established technical publisher.',
+    icon: Newspaper,
   },
 ]
 
