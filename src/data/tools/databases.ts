@@ -222,4 +222,13 @@ export const databases: Tool[] = [
     tags: ['database-client', 'sql'],
     pricing: 'freemium',
   },
+  {
+    id: 'sequelize',
+    name: 'Sequelize',
+    description: 'Promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite, and SQL Server.',
+    url: 'https://sequelize.org/docs/v6/',
+    categoryId: 'databases',
+    tags: ['orm', 'nodejs'],
+    pricing: 'free',
+  },
 ]

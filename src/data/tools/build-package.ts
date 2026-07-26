@@ -102,4 +102,22 @@ export const buildPackage: Tool[] = [
     tags: ['package-manager', 'workspaces'],
     pricing: 'free',
   },
+  {
+    id: 'babel',
+    name: 'Babel',
+    description: 'JavaScript compiler that transforms modern syntax into backwards-compatible code.',
+    url: 'https://babeljs.io/docs/',
+    categoryId: 'build-package',
+    tags: ['transpiler', 'javascript'],
+    pricing: 'free',
+  },
+  {
+    id: 'homebrew',
+    name: 'Homebrew',
+    description: 'Package manager for installing command-line tools and apps on macOS and Linux.',
+    url: 'https://brew.sh/',
+    categoryId: 'build-package',
+    tags: ['package-manager', 'macos'],
+    pricing: 'free',
+  },
 ]

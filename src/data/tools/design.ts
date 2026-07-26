@@ -112,4 +112,13 @@ export const design: Tool[] = [
     tags: ['whiteboard', 'collaboration'],
     pricing: 'freemium',
   },
+  {
+    id: 'dbdiagram',
+    name: 'dbdiagram.io',
+    description: 'Design and visualize database schemas from a simple DSL, then export to SQL.',
+    url: 'https://dbdiagram.io/home',
+    categoryId: 'design',
+    tags: ['erd', 'database-diagrams'],
+    pricing: 'freemium',
+  },
 ]
