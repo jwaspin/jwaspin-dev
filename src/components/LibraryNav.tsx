@@ -1,7 +1,8 @@
 import { BookOpen } from 'lucide-react'
 import type { LibraryEcosystem } from '../data/types'
-import type { SortOrder } from './CategoryNav'
 import { ToolIcon } from './ToolIcon'
+import { SortToggle } from './SortToggle'
+import type { SortOrder } from './CategoryNav'
 import type { ReactNode } from 'react'
 
 export function LibraryNav({
@@ -27,21 +28,23 @@ export function LibraryNav({
 }) {
   if (variant === 'chips') {
     return (
-      <div className="space-y-3">
-        <div className="scrollbar-thin flex gap-2 overflow-x-auto pb-1">
+      <div className="flex items-center gap-2">
+        <div className="scrollbar-thin flex flex-1 gap-2 overflow-x-auto pb-1">
           <Chip label="All libraries" count={totalCount} active={selected === null} onClick={() => onSelect(null)} />
           {ecosystems.map((ecosystem) => (
             <Chip key={ecosystem.id} label={ecosystem.name} count={counts.get(ecosystem.id) ?? 0} active={selected === ecosystem.id} onClick={() => onSelect(ecosystem.id)} />
           ))}
         </div>
-        <Sort value={sortOrder} onChange={onSortChange} />
+        <SortToggle value={sortOrder} onChange={onSortChange} />
       </div>
     )
   }
 
   return (
     <div className="fixed top-22 bottom-14 flex w-72 shrink-0 flex-col">
-      <div className="mb-3 pr-2 shrink-0"><Sort value={sortOrder} onChange={onSortChange} /></div>
+      <div className="mb-1 flex justify-end pr-2">
+        <SortToggle value={sortOrder} onChange={onSortChange} />
+      </div>
       <nav className="scrollbar-thin flex-1 space-y-0.5 overflow-y-auto pr-2" aria-label="Library ecosystems">
         <Row icon={<BookOpen className="h-4 w-4 shrink-0" />} label="All Libraries" count={totalCount} active={selected === null} onClick={() => onSelect(null)} />
         <div className="my-2 border-t border-slate-200 dark:border-slate-800" />
@@ -57,17 +60,6 @@ export function LibraryNav({
         ))}
       </nav>
     </div>
-  )
-}
-
-function Sort({ value, onChange }: { value: SortOrder; onChange: (order: SortOrder) => void }) {
-  return (
-    <label className="flex w-full items-center gap-2">
-      <span className="shrink-0 text-xs font-medium text-slate-500 dark:text-slate-400">Sort</span>
-      <select value={value} onChange={(event) => onChange(event.target.value as SortOrder)} className="min-w-0 flex-1 rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-sm text-slate-700 shadow-sm outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-500/20 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
-        <option value="az">Alphabetical (A–Z)</option><option value="za">Alphabetical (Z–A)</option>
-      </select>
-    </label>
   )
 }
 

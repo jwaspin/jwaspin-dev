@@ -27,7 +27,7 @@ export function ToolCard({ tool }: { tool: Tool }) {
         className="absolute inset-0 z-0 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
       />
 
-      <div className="relative z-1 flex items-start justify-between gap-2">
+      <div className="flex items-start justify-between gap-2">
         <div className="flex items-center gap-3">
           <ToolIcon name={tool.name} url={tool.url} />
           <h3 className="font-medium leading-tight text-slate-900 dark:text-slate-100">
@@ -53,9 +53,9 @@ export function ToolCard({ tool }: { tool: Tool }) {
         </div>
       </div>
 
-      <p className="relative z-1 text-sm leading-snug text-slate-600 dark:text-slate-400">{tool.description}</p>
+      <p className="text-sm leading-snug text-slate-600 dark:text-slate-400">{tool.description}</p>
 
-      <div className="relative z-1 mt-auto flex flex-wrap items-center gap-1.5 pt-1">
+      <div className="mt-auto flex flex-wrap items-center gap-1.5 pt-1">
         {tool.pricing && (
           <span
             className={`rounded-full px-2 py-0.5 text-xs font-medium ring-1 ring-inset ${PRICING_CLASS[tool.pricing]}`}

@@ -1,5 +1,6 @@
 import { Shapes } from 'lucide-react'
 import type { Category } from '../data/types'
+import { SortToggle } from './SortToggle'
 
 export type SortOrder = 'az' | 'za'
 
@@ -28,8 +29,8 @@ export function CategoryNav({
 }: CategoryNavProps) {
   if (variant === 'chips') {
     return (
-      <div className="space-y-3">
-        <div className="scrollbar-thin flex gap-2 overflow-x-auto pb-1">
+      <div className="flex items-center gap-2">
+        <div className="scrollbar-thin flex flex-1 gap-2 overflow-x-auto pb-1">
           <NavChip
             label="Categories"
             count={categories.length}
@@ -46,15 +47,15 @@ export function CategoryNav({
             />
           ))}
         </div>
-        <SortSelect value={sortOrder} onChange={onSortChange} compact />
+        <SortToggle value={sortOrder} onChange={onSortChange} />
       </div>
     )
   }
 
   return (
     <div className="fixed top-22 bottom-14 flex w-72 shrink-0 flex-col">
-      <div className="mb-3 pr-2 shrink-0">
-        <SortSelect value={sortOrder} onChange={onSortChange} />
+      <div className="mb-1 flex justify-end pr-2">
+        <SortToggle value={sortOrder} onChange={onSortChange} />
       </div>
       <nav className="scrollbar-thin flex-1 space-y-0.5 overflow-y-auto pr-2">
         <NavRow
@@ -77,31 +78,6 @@ export function CategoryNav({
         ))}
       </nav>
     </div>
-  )
-}
-
-function SortSelect({
-  value,
-  onChange,
-  compact = false,
-}: {
-  value: SortOrder
-  onChange: (order: SortOrder) => void
-  compact?: boolean
-}) {
-  return (
-    <label className={`flex items-center gap-2 ${compact ? 'max-w-xs' : 'w-full'}`}>
-      <span className="shrink-0 text-xs font-medium text-slate-500 dark:text-slate-400">Sort</span>
-      <select
-        value={value}
-        onChange={(event) => onChange(event.target.value as SortOrder)}
-        aria-label="Sort categories and tools"
-        className="min-w-0 flex-1 rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-sm text-slate-700 shadow-sm outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/20 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300"
-      >
-        <option value="az">Alphabetical (A–Z)</option>
-        <option value="za">Alphabetical (Z–A)</option>
-      </select>
-    </label>
   )
 }
 

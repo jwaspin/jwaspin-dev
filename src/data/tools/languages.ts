@@ -133,9 +133,9 @@ export const languages: Tool[] = [
   },
   {
     id: 'c',
-    name: 'C (cppreference)',
-    description: 'Reference for the C language and standard library.',
-    url: 'https://en.cppreference.com/w/c',
+    name: 'C',
+    description: 'Reference for the C language and standard library from the ISO committee that maintains it.',
+    url: 'https://www.open-std.org/jtc1/sc22/wg14/',
     categoryId: 'languages',
     tags: ['systems', 'embedded'],
     pricing: 'free',

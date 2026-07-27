@@ -77,7 +77,7 @@ function ReferenceCard({ reference }: { reference: Reference }) {
         className="absolute inset-0 z-0 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
       />
 
-      <div className="relative z-1 flex items-start justify-between gap-2">
+      <div className="flex items-start justify-between gap-2">
         <div className="flex items-center gap-3">
           <ToolIcon name={reference.title} url={reference.url} />
           <div>
@@ -104,7 +104,7 @@ function ReferenceCard({ reference }: { reference: Reference }) {
         </div>
       </div>
 
-      <p className="relative z-1 text-sm leading-snug text-slate-600 dark:text-slate-400">{reference.description}</p>
+      <p className="text-sm leading-snug text-slate-600 dark:text-slate-400">{reference.description}</p>
     </div>
   )
 }

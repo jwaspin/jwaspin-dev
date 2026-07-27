@@ -68,7 +68,7 @@ export function LandingPage({
           jwaspin<span className="text-indigo-500">.dev</span>
         </h1>
         <p className="mt-2 text-slate-600 dark:text-slate-400">
-          A curated map of the developer tool landscape. Pick a place to start.
+          A hand-maintained directory of developer tools, organizations, libraries, and references. Pick a place to start.
         </p>
       </div>
 
