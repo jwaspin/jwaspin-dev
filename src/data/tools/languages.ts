@@ -134,8 +134,8 @@ export const languages: Tool[] = [
   {
     id: 'c',
     name: 'C',
-    description: 'Reference for the C language and standard library from the ISO committee that maintains it.',
-    url: 'https://www.open-std.org/jtc1/sc22/wg14/',
+    description: 'Interactive lessons and reference for the C programming language.',
+    url: 'https://www.learn-c.org/',
     categoryId: 'languages',
     tags: ['systems', 'embedded'],
     pricing: 'free',
