@@ -17,7 +17,7 @@ export function CategoriesPage({
       <div className="mb-8 max-w-2xl">
         <p className="text-sm font-medium text-indigo-600 dark:text-indigo-400">Explore the landscape</p>
         <h1 className="mt-1 text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
-          All categories
+          Categories
         </h1>
         <p className="mt-2 text-slate-600 dark:text-slate-400">
           Browse the library by the part of the development lifecycle you are working in.

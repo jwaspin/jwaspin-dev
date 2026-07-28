@@ -66,6 +66,11 @@ function App() {
     [sortOrder],
   )
 
+  const sortedSourceTypes = useMemo(
+    () => [...referenceSourceTypes].sort((a, b) => compareByName(a, b, sortOrder)),
+    [sortOrder],
+  )
+
   const selectedOwner = productOwners.find((owner) => owner.id === selectedOwnerId) ?? null
 
   const sortTools = (items: typeof tools) => [...items].sort((a, b) => compareByName(a, b, sortOrder))
@@ -82,8 +87,6 @@ function App() {
     setSelectedEcosystem(null)
     setQuery('')
   }
-
-  const showTools = () => selectCategory(null)
 
   const showLanding = () => {
     setView('landing')
@@ -212,7 +215,7 @@ function App() {
           ) : isReferencesView ? (
             <ReferenceNav
               variant="sidebar"
-              sourceTypes={referenceSourceTypes}
+              sourceTypes={sortedSourceTypes}
               references={references}
               totalCount={references.length}
               selected={selectedSourceType}
@@ -276,7 +279,7 @@ function App() {
             ) : isReferencesView ? (
               <ReferenceNav
                 variant="chips"
-                sourceTypes={referenceSourceTypes}
+                sourceTypes={sortedSourceTypes}
                 references={references}
                 totalCount={references.length}
                 selected={selectedSourceType}
@@ -311,11 +314,11 @@ function App() {
 
           {!isSearching && selectedCategory && view === 'tools' && (
             <button
-              onClick={showTools}
+              onClick={showCategories}
               className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-sm font-medium text-slate-700 shadow-sm transition hover:border-indigo-300 hover:text-indigo-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-indigo-500/50 dark:hover:text-indigo-400"
             >
               <ArrowLeft className="h-4.5 w-4.5" aria-hidden="true" />
-              All tools
+              Categories
             </button>
           )}
 
@@ -358,7 +361,7 @@ function App() {
             />
           ) : isReferencesView ? (
             <ReferencesPage
-              sourceTypes={referenceSourceTypes}
+              sourceTypes={sortedSourceTypes}
               references={sortReferences(references)}
               selected={selectedSourceType}
               onSelect={selectSourceType}
