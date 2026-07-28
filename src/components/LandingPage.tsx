@@ -80,8 +80,9 @@ export function LandingPage({
           jwaspin<span className="text-indigo-500">.dev</span>
         </h1>
         <p className="mt-2 text-slate-600 dark:text-slate-400">
-          A directory of developer tools, organizations, libraries, and
-          references. Pick a place to start.
+          A directory of developer tools, grouped by categories and
+          organizations, as well as libraries and references. Pick a place to
+          start.
         </p>
       </div>
 
