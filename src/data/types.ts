@@ -47,6 +47,7 @@ export interface Library {
   url: string
   ecosystemId: string
   tags?: string[]
+  githubUrl?: string
 }
 
 export interface Tool {
@@ -60,4 +61,24 @@ export interface Tool {
   pricing?: Pricing
   /** Surface in the "Popular" rail on the home view. */
   featured?: boolean
+  githubUrl?: string
+}
+
+export type ReferenceSourceType = 'official' | 'essay' | 'publisher'
+
+export interface ReferenceSourceTypeInfo {
+  id: ReferenceSourceType
+  name: string
+  description: string
+  icon: LucideIcon
+}
+
+export interface Reference {
+  id: string
+  title: string
+  description: string
+  author: string
+  url: string
+  sourceType: ReferenceSourceType
+  githubUrl?: string
 }

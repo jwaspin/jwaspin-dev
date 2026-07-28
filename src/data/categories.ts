@@ -19,6 +19,7 @@ import {
   Layers3,
   Package,
   Network,
+  Fingerprint,
 } from 'lucide-react'
 import type { Category, CategoryGroup } from './types'
 
@@ -112,6 +113,13 @@ export const categories: Category[] = [
     name: 'API Tools',
     description: 'Building, testing, and documenting HTTP, GraphQL, and RPC APIs.',
     icon: Plug,
+    groupId: 'application-development',
+  },
+  {
+    id: 'auth',
+    name: 'Auth & Identity',
+    description: 'Login, identity, session management, and access-control tools.',
+    icon: Fingerprint,
     groupId: 'application-development',
   },
   {

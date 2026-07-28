@@ -10,6 +10,7 @@ export const stateData: Tool[] = [
     tags: ['state', 'react'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/reduxjs/redux',
   },
   {
     id: 'zustand',
@@ -20,6 +21,7 @@ export const stateData: Tool[] = [
     tags: ['state', 'react', 'minimal'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/pmndrs/zustand',
   },
   {
     id: 'tanstack-query',
@@ -30,6 +32,7 @@ export const stateData: Tool[] = [
     tags: ['data-fetching', 'caching'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/TanStack/query',
   },
   {
     id: 'jotai',
@@ -39,6 +42,7 @@ export const stateData: Tool[] = [
     categoryId: 'state-data',
     tags: ['state', 'atomic'],
     pricing: 'free',
+    githubUrl: 'https://github.com/pmndrs/jotai',
   },
   {
     id: 'recoil',
@@ -48,6 +52,7 @@ export const stateData: Tool[] = [
     categoryId: 'state-data',
     tags: ['state', 'atomic'],
     pricing: 'free',
+    githubUrl: 'https://github.com/facebookexperimental/Recoil',
   },
   {
     id: 'mobx',
@@ -57,6 +62,7 @@ export const stateData: Tool[] = [
     categoryId: 'state-data',
     tags: ['state', 'reactive'],
     pricing: 'free',
+    githubUrl: 'https://github.com/mobxjs/mobx',
   },
   {
     id: 'apollo-client',
@@ -66,6 +72,7 @@ export const stateData: Tool[] = [
     categoryId: 'state-data',
     tags: ['graphql', 'data-fetching'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/apollographql/apollo-client',
   },
   {
     id: 'swr',
@@ -75,6 +82,7 @@ export const stateData: Tool[] = [
     categoryId: 'state-data',
     tags: ['data-fetching', 'react'],
     pricing: 'free',
+    githubUrl: 'https://github.com/vercel/swr',
   },
   {
     id: 'pinia',
@@ -84,6 +92,7 @@ export const stateData: Tool[] = [
     categoryId: 'state-data',
     tags: ['state', 'vue'],
     pricing: 'free',
+    githubUrl: 'https://github.com/vuejs/pinia',
   },
   {
     id: 'xstate',
@@ -93,5 +102,6 @@ export const stateData: Tool[] = [
     categoryId: 'state-data',
     tags: ['state-machines'],
     pricing: 'free',
+    githubUrl: 'https://github.com/statelyai/xstate',
   },
 ]

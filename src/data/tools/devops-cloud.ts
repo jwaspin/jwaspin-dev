@@ -10,6 +10,7 @@ export const devopsCloud: Tool[] = [
     tags: ['containers'],
     pricing: 'freemium',
     featured: true,
+    githubUrl: 'https://github.com/moby/moby',
   },
   {
     id: 'kubernetes',
@@ -20,6 +21,7 @@ export const devopsCloud: Tool[] = [
     tags: ['containers', 'orchestration'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/kubernetes/kubernetes',
   },
   {
     id: 'terraform',
@@ -30,6 +32,7 @@ export const devopsCloud: Tool[] = [
     tags: ['iac'],
     pricing: 'freemium',
     featured: true,
+    githubUrl: 'https://github.com/hashicorp/terraform',
   },
   {
     id: 'github-actions',
@@ -49,6 +52,7 @@ export const devopsCloud: Tool[] = [
     categoryId: 'devops-cloud',
     tags: ['ci-cd', 'self-hosted'],
     pricing: 'free',
+    githubUrl: 'https://github.com/jenkinsci/jenkins',
   },
   {
     id: 'aws',
@@ -104,6 +108,7 @@ export const devopsCloud: Tool[] = [
     categoryId: 'devops-cloud',
     tags: ['iac'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/pulumi/pulumi',
   },
   {
     id: 'ansible',
@@ -113,6 +118,7 @@ export const devopsCloud: Tool[] = [
     categoryId: 'devops-cloud',
     tags: ['configuration-management'],
     pricing: 'free',
+    githubUrl: 'https://github.com/ansible/ansible',
   },
   {
     id: 'circleci',
@@ -140,6 +146,7 @@ export const devopsCloud: Tool[] = [
     categoryId: 'devops-cloud',
     tags: ['kubernetes', 'packaging'],
     pricing: 'free',
+    githubUrl: 'https://github.com/helm/helm',
   },
   {
     id: 'argocd',
@@ -149,6 +156,16 @@ export const devopsCloud: Tool[] = [
     categoryId: 'devops-cloud',
     tags: ['kubernetes', 'gitops'],
     pricing: 'free',
+    githubUrl: 'https://github.com/argoproj/argo-cd',
+  },
+  {
+    id: 'proxmox',
+    name: 'Proxmox VE',
+    description: 'Open-source virtualization platform combining KVM and LXC with a web-based management interface.',
+    url: 'https://pve.proxmox.com/pve-docs/',
+    categoryId: 'devops-cloud',
+    tags: ['virtualization', 'hypervisor', 'self-hosted'],
+    pricing: 'freemium',
   },
   {
     id: 'railway',
@@ -185,6 +202,7 @@ export const devopsCloud: Tool[] = [
     categoryId: 'devops-cloud',
     tags: ['infrastructure', 'machine-images', 'hashicorp'],
     pricing: 'free',
+    githubUrl: 'https://github.com/hashicorp/packer',
   },
   {
     id: 'nomad',
@@ -194,6 +212,7 @@ export const devopsCloud: Tool[] = [
     categoryId: 'devops-cloud',
     tags: ['orchestration', 'containers', 'hashicorp'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/hashicorp/nomad',
   },
   {
     id: 'waypoint',
@@ -203,6 +222,7 @@ export const devopsCloud: Tool[] = [
     categoryId: 'devops-cloud',
     tags: ['platform-engineering', 'deployment', 'hashicorp'],
     pricing: 'paid',
+    githubUrl: 'https://github.com/hashicorp/waypoint',
   },
   {
     id: 'vagrant',
@@ -212,5 +232,6 @@ export const devopsCloud: Tool[] = [
     categoryId: 'devops-cloud',
     tags: ['virtual-machines', 'development-environment', 'hashicorp'],
     pricing: 'free',
+    githubUrl: 'https://github.com/hashicorp/vagrant',
   },
 ]

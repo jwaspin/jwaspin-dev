@@ -10,6 +10,7 @@ export const buildPackage: Tool[] = [
     tags: ['bundler', 'dev-server'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/vitejs/vite',
   },
   {
     id: 'webpack',
@@ -19,6 +20,7 @@ export const buildPackage: Tool[] = [
     categoryId: 'build-package',
     tags: ['bundler', 'javascript'],
     pricing: 'free',
+    githubUrl: 'https://github.com/webpack/webpack',
   },
   {
     id: 'rollup',
@@ -28,6 +30,7 @@ export const buildPackage: Tool[] = [
     categoryId: 'build-package',
     tags: ['bundler', 'libraries'],
     pricing: 'free',
+    githubUrl: 'https://github.com/rollup/rollup',
   },
   {
     id: 'esbuild',
@@ -37,6 +40,7 @@ export const buildPackage: Tool[] = [
     categoryId: 'build-package',
     tags: ['bundler', 'minifier'],
     pricing: 'free',
+    githubUrl: 'https://github.com/evanw/esbuild',
   },
   {
     id: 'rolldown',
@@ -46,6 +50,7 @@ export const buildPackage: Tool[] = [
     categoryId: 'build-package',
     tags: ['bundler', 'rust'],
     pricing: 'free',
+    githubUrl: 'https://github.com/rolldown/rolldown',
   },
   {
     id: 'parcel',
@@ -55,6 +60,7 @@ export const buildPackage: Tool[] = [
     categoryId: 'build-package',
     tags: ['bundler', 'zero-config'],
     pricing: 'free',
+    githubUrl: 'https://github.com/parcel-bundler/parcel',
   },
   {
     id: 'turborepo',
@@ -64,6 +70,7 @@ export const buildPackage: Tool[] = [
     categoryId: 'build-package',
     tags: ['monorepo', 'build-system'],
     pricing: 'free',
+    githubUrl: 'https://github.com/vercel/turborepo',
   },
   {
     id: 'nx',
@@ -73,6 +80,7 @@ export const buildPackage: Tool[] = [
     categoryId: 'build-package',
     tags: ['monorepo', 'build-system'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/nrwl/nx',
   },
   {
     id: 'pnpm',
@@ -83,6 +91,7 @@ export const buildPackage: Tool[] = [
     tags: ['package-manager', 'monorepo'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/pnpm/pnpm',
   },
   {
     id: 'npm',
@@ -92,6 +101,7 @@ export const buildPackage: Tool[] = [
     categoryId: 'build-package',
     tags: ['package-manager', 'registry'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/npm/cli',
   },
   {
     id: 'yarn',
@@ -101,6 +111,7 @@ export const buildPackage: Tool[] = [
     categoryId: 'build-package',
     tags: ['package-manager', 'workspaces'],
     pricing: 'free',
+    githubUrl: 'https://github.com/yarnpkg/berry',
   },
   {
     id: 'babel',
@@ -110,6 +121,7 @@ export const buildPackage: Tool[] = [
     categoryId: 'build-package',
     tags: ['transpiler', 'javascript'],
     pricing: 'free',
+    githubUrl: 'https://github.com/babel/babel',
   },
   {
     id: 'homebrew',
@@ -119,5 +131,6 @@ export const buildPackage: Tool[] = [
     categoryId: 'build-package',
     tags: ['package-manager', 'macos'],
     pricing: 'free',
+    githubUrl: 'https://github.com/Homebrew/brew',
   },
 ]

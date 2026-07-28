@@ -1,8 +1,9 @@
-import { ArrowLeft, ArrowRight, BookOpen } from 'lucide-react'
+import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react'
 import type { Library, LibraryEcosystem } from '../data/types'
 import { LibraryCard } from './LibraryCard'
+import { ToolIcon } from './ToolIcon'
 
-export function LibrariesPage({ ecosystems, libraries, selected, onSelect }: { ecosystems: LibraryEcosystem[]; libraries: Library[]; selected: string | null; onSelect: (id: string | null) => void }) {
+export function LibrariesPage({ ecosystems, libraries, iconUrls, selected, onSelect }: { ecosystems: LibraryEcosystem[]; libraries: Library[]; iconUrls: Map<string, string>; selected: string | null; onSelect: (id: string | null) => void }) {
   const visible = selected ? ecosystems.filter((ecosystem) => ecosystem.id === selected) : ecosystems
   return (
     <section>
@@ -15,7 +16,47 @@ export function LibrariesPage({ ecosystems, libraries, selected, onSelect }: { e
         {visible.map((ecosystem) => {
           const items = libraries.filter((library) => library.ecosystemId === ecosystem.id)
           const related = ecosystem.relatedEcosystemIds?.map((id) => ecosystems.find((candidate) => candidate.id === id)).filter((item): item is LibraryEcosystem => item !== undefined) ?? []
-          return <section key={ecosystem.id}><div className="mb-4 flex items-start gap-3"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-violet-50 text-violet-600 dark:bg-violet-500/10 dark:text-violet-400"><BookOpen className="h-5 w-5" /></span><div><h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">{ecosystem.name}<span className="ml-2 text-sm font-normal text-slate-400">{items.length}</span></h2><p className="text-sm text-slate-500 dark:text-slate-400">{ecosystem.description}</p></div></div>{related.length > 0 && <div className="mb-4 rounded-xl border border-violet-200 bg-violet-50/70 px-4 py-3 text-sm text-violet-900 dark:border-violet-500/20 dark:bg-violet-500/10 dark:text-violet-200"><span>General {related.map((item) => item.name).join(' and ')} libraries also apply, but are not {ecosystem.name}-specific.</span>{related.map((item) => <button key={item.id} onClick={() => onSelect(item.id)} className="ml-2 inline-flex items-center gap-1 font-semibold text-violet-700 hover:text-violet-900 dark:text-violet-300 dark:hover:text-violet-100">Browse {item.name}<ArrowRight className="h-3.5 w-3.5" /></button>)}</div>}<div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{items.map((library) => <LibraryCard key={library.id} library={library} />)}</div></section>
+          const ecosystemUrl = iconUrls.get(ecosystem.id)
+          return (
+            <section key={ecosystem.id}>
+              {ecosystemUrl ? (
+                <a
+                  href={ecosystemUrl}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="group mb-4 flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white px-5 py-4 shadow-sm transition hover:-translate-y-0.5 hover:border-violet-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-violet-500/40"
+                >
+                  <div className="flex items-center gap-3">
+                    <ToolIcon name={ecosystem.name} url={ecosystemUrl} size={36} />
+                    <div>
+                      <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+                        {ecosystem.name}
+                        <span className="ml-2 text-sm font-normal text-slate-400">{items.length}</span>
+                      </h2>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">{ecosystem.description}</p>
+                    </div>
+                  </div>
+                  <ExternalLink
+                    className="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-violet-500 dark:text-slate-700"
+                    aria-hidden="true"
+                  />
+                </a>
+              ) : (
+                <div className="mb-4 flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-5 py-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                  <ToolIcon name={ecosystem.name} url="" size={36} />
+                  <div>
+                    <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+                      {ecosystem.name}
+                      <span className="ml-2 text-sm font-normal text-slate-400">{items.length}</span>
+                    </h2>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">{ecosystem.description}</p>
+                  </div>
+                </div>
+              )}
+              {related.length > 0 && <div className="mb-4 rounded-xl border border-violet-200 bg-violet-50/70 px-4 py-3 text-sm text-violet-900 dark:border-violet-500/20 dark:bg-violet-500/10 dark:text-violet-200"><span>General {related.map((item) => item.name).join(' and ')} libraries also apply, but are not {ecosystem.name}-specific.</span>{related.map((item) => <button key={item.id} onClick={() => onSelect(item.id)} className="ml-2 inline-flex items-center gap-1 font-semibold text-violet-700 hover:text-violet-900 dark:text-violet-300 dark:hover:text-violet-100">Browse {item.name}<ArrowRight className="h-3.5 w-3.5" /></button>)}</div>}
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{items.map((library) => <LibraryCard key={library.id} library={library} />)}</div>
+            </section>
+          )
         })}
       </div>
     </section>

@@ -9,6 +9,7 @@ import { cssUi } from './tools/css-ui'
 import { stateData } from './tools/state-data'
 import { databases } from './tools/databases'
 import { apiTools } from './tools/api-tools'
+import { auth } from './tools/auth'
 import { networkingSecurity } from './tools/networking-security'
 import { design } from './tools/design'
 import { aiMl } from './tools/ai-ml'
@@ -22,9 +23,10 @@ import { productivity } from './tools/productivity'
 import { designAssets } from './tools/design-assets'
 import { productOwners } from './owners'
 import { libraries, libraryCountByEcosystem, libraryEcosystems } from './libraries'
+import { references, referenceSourceTypes } from './references'
 
-export type { Tool, Category, CategoryGroup, CategoryGroupId, ProductOwner, Library, LibraryEcosystem, Pricing } from './types'
-export { categories, categoryById, categoryGroups, productOwners, libraries, libraryCountByEcosystem, libraryEcosystems }
+export type { Tool, Category, CategoryGroup, CategoryGroupId, ProductOwner, Library, LibraryEcosystem, Pricing, Reference, ReferenceSourceType, ReferenceSourceTypeInfo } from './types'
+export { categories, categoryById, categoryGroups, productOwners, libraries, libraryCountByEcosystem, libraryEcosystems, references, referenceSourceTypes }
 
 /**
  * Every tool across every category, in category-declaration order.
@@ -41,6 +43,7 @@ export const tools: Tool[] = [
   ...stateData,
   ...databases,
   ...apiTools,
+  ...auth,
   ...networkingSecurity,
   ...design,
   ...aiMl,
@@ -58,5 +61,10 @@ export const toolCountByCategory: Map<string, number> = tools.reduce((map, tool)
   map.set(tool.categoryId, (map.get(tool.categoryId) ?? 0) + 1)
   return map
 }, new Map<string, number>())
+
+/** Favicon source for each library ecosystem, borrowed from the tool/language it extends. */
+export const ecosystemIconUrl: Map<string, string> = new Map(
+  libraryEcosystems.map((ecosystem) => [ecosystem.id, tools.find((tool) => tool.id === ecosystem.toolId)?.url ?? '']),
+)
 
 export const featuredTools: Tool[] = tools.filter((t) => t.featured)

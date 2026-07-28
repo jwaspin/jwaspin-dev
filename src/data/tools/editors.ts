@@ -10,6 +10,7 @@ export const editors: Tool[] = [
     tags: ['editor', 'free'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/microsoft/vscode',
   },
   {
     id: 'intellij-idea',
@@ -19,6 +20,7 @@ export const editors: Tool[] = [
     categoryId: 'editors',
     tags: ['ide', 'jvm'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/JetBrains/intellij-community',
   },
   {
     id: 'neovim',
@@ -29,6 +31,7 @@ export const editors: Tool[] = [
     tags: ['editor', 'terminal'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/neovim/neovim',
   },
   {
     id: 'sublime-text',
@@ -47,6 +50,7 @@ export const editors: Tool[] = [
     categoryId: 'editors',
     tags: ['editor', 'performance'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/zed-industries/zed',
   },
   {
     id: 'webstorm',
@@ -65,6 +69,7 @@ export const editors: Tool[] = [
     categoryId: 'editors',
     tags: ['editor', 'terminal'],
     pricing: 'free',
+    githubUrl: 'https://github.com/vim/vim',
   },
   {
     id: 'emacs',
@@ -92,6 +97,7 @@ export const editors: Tool[] = [
     categoryId: 'editors',
     tags: ['terminal', 'macos'],
     pricing: 'free',
+    githubUrl: 'https://github.com/gnachman/iTerm2',
   },
   {
     id: 'windows-terminal',
@@ -101,6 +107,7 @@ export const editors: Tool[] = [
     categoryId: 'editors',
     tags: ['terminal', 'windows'],
     pricing: 'free',
+    githubUrl: 'https://github.com/microsoft/terminal',
   },
   {
     id: 'warp',
@@ -119,5 +126,6 @@ export const editors: Tool[] = [
     categoryId: 'editors',
     tags: ['terminal', 'cross-platform'],
     pricing: 'free',
+    githubUrl: 'https://github.com/alacritty/alacritty',
   },
 ]

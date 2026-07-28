@@ -1,0 +1,64 @@
+import { ScrollText } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
+import type { Reference, ReferenceSourceType, ReferenceSourceTypeInfo } from '../data/types'
+import { SortToggle } from './SortToggle'
+import type { SortOrder } from './CategoryNav'
+
+export function ReferenceNav({
+  sourceTypes,
+  references,
+  totalCount,
+  selected,
+  onSelect,
+  sortOrder,
+  onSortChange,
+  variant,
+}: {
+  sourceTypes: ReferenceSourceTypeInfo[]
+  references: Reference[]
+  totalCount: number
+  selected: ReferenceSourceType | null
+  onSelect: (id: ReferenceSourceType | null) => void
+  sortOrder: SortOrder
+  onSortChange: (order: SortOrder) => void
+  variant: 'sidebar' | 'chips'
+}) {
+  const countFor = (id: ReferenceSourceType) => references.filter((reference) => reference.sourceType === id).length
+
+  if (variant === 'chips') {
+    return (
+      <div className="flex items-center gap-2">
+        <div className="scrollbar-thin flex flex-1 gap-2 overflow-x-auto pb-1">
+          <Chip label="All references" count={totalCount} active={selected === null} onClick={() => onSelect(null)} />
+          {sourceTypes.map((sourceType) => (
+            <Chip key={sourceType.id} label={sourceType.name} count={countFor(sourceType.id)} active={selected === sourceType.id} onClick={() => onSelect(sourceType.id)} />
+          ))}
+        </div>
+        <SortToggle value={sortOrder} onChange={onSortChange} />
+      </div>
+    )
+  }
+
+  return (
+    <div className="fixed top-22 bottom-14 flex w-72 shrink-0 flex-col">
+      <div className="mb-1 flex justify-end pr-2">
+        <SortToggle value={sortOrder} onChange={onSortChange} />
+      </div>
+      <nav className="scrollbar-thin flex-1 space-y-0.5 overflow-y-auto pr-2" aria-label="Reference source types">
+        <Row icon={ScrollText} label="All References" count={totalCount} active={selected === null} onClick={() => onSelect(null)} />
+        <div className="my-2 border-t border-slate-200 dark:border-slate-800" />
+        {sourceTypes.map((sourceType) => (
+          <Row key={sourceType.id} icon={sourceType.icon} label={sourceType.name} count={countFor(sourceType.id)} active={selected === sourceType.id} onClick={() => onSelect(sourceType.id)} />
+        ))}
+      </nav>
+    </div>
+  )
+}
+
+function Row({ icon: Icon, label, count, active, onClick }: { icon: LucideIcon; label: string; count: number; active: boolean; onClick: () => void }) {
+  return <button onClick={onClick} className={`flex w-full items-center gap-2.5 rounded-lg px-2.5 py-1 text-left text-sm transition ${active ? 'bg-indigo-50 font-medium text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-300' : 'text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-900'}`}><Icon className="h-4 w-4 shrink-0" /><span className="flex-1 truncate">{label}</span><span className="text-xs tabular-nums text-slate-400 dark:text-slate-600">{count}</span></button>
+}
+
+function Chip({ label, count, active, onClick }: { label: string; count: number; active: boolean; onClick: () => void }) {
+  return <button onClick={onClick} className={`flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm whitespace-nowrap transition ${active ? 'border-indigo-300 bg-indigo-50 font-medium text-indigo-700 dark:border-indigo-500/40 dark:bg-indigo-500/10 dark:text-indigo-300' : 'border-slate-200 text-slate-600 hover:bg-slate-100 dark:border-slate-800 dark:text-slate-400 dark:hover:bg-slate-900'}`}>{label}<span className="text-xs tabular-nums opacity-60">{count}</span></button>
+}

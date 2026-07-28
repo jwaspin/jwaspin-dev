@@ -1,17 +1,21 @@
 import { useState } from 'react'
 import { faviconUrl, monogramColor } from '../lib/favicon'
 
-export function ToolIcon({ name, url }: { name: string; url: string }) {
+export function ToolIcon({ name, url, size = 36 }: { name: string; url: string; size?: number }) {
   const [errored, setErrored] = useState(false)
   const src = faviconUrl(url)
+  const dimensions = { width: size, height: size }
 
   if (errored || !src) {
     return (
       <div
-        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-sm font-semibold text-white ${monogramColor(name)}`}
+        style={dimensions}
+        className={`flex shrink-0 items-center justify-center rounded-lg font-semibold text-white ${monogramColor(name)}`}
         aria-hidden="true"
       >
-        {name.charAt(0).toUpperCase()}
+        <span style={{ fontSize: size * 0.42 }} className="leading-none">
+          {name.charAt(0).toUpperCase()}
+        </span>
       </div>
     )
   }
@@ -21,11 +25,12 @@ export function ToolIcon({ name, url }: { name: string; url: string }) {
       src={src}
       alt=""
       aria-hidden="true"
-      width={36}
-      height={36}
+      width={size}
+      height={size}
       loading="lazy"
       onError={() => setErrored(true)}
-      className="h-9 w-9 shrink-0 rounded-lg bg-white object-contain p-1 ring-1 ring-slate-200 dark:ring-slate-800"
+      style={dimensions}
+      className="shrink-0 rounded-lg bg-white object-contain p-1 ring-1 ring-slate-200 dark:ring-slate-800"
     />
   )
 }

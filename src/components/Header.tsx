@@ -1,4 +1,4 @@
-import { BookOpen, Building2, LayoutGrid, Shapes, Sparkles, SunMedium, Moon } from 'lucide-react'
+import { BookOpen, Building2, ScrollText, Shapes, Sparkles, SunMedium, Moon } from 'lucide-react'
 import type { Theme } from '../hooks/useTheme'
 import { GithubMark } from './GithubMark'
 import packageMetadata from '../../package.json'
@@ -6,26 +6,28 @@ import packageMetadata from '../../package.json'
 interface HeaderProps {
   theme: Theme
   onToggleTheme: () => void
-  activeView: 'tools' | 'categories' | 'organizations' | 'libraries'
-  onShowTools: () => void
+  activeView: 'tools' | 'categories' | 'organizations' | 'libraries' | 'references'
+  onShowLanding: () => void
   onShowCategories: () => void
   onShowOrganizations: () => void
   onShowLibraries: () => void
+  onShowReferences: () => void
 }
 
 export function Header({
   theme,
   onToggleTheme,
   activeView,
-  onShowTools,
+  onShowLanding,
   onShowCategories,
   onShowOrganizations,
   onShowLibraries,
+  onShowReferences,
 }: HeaderProps) {
   return (
     <header className="sticky top-0 z-30 border-b border-slate-200/80 bg-slate-50/85 backdrop-blur-sm dark:border-slate-800/80 dark:bg-slate-950/85">
       <div className="mx-auto flex h-16 max-w-[86rem] items-center gap-4 px-4 sm:px-6">
-        <button onClick={onShowTools} className="flex shrink-0 items-center gap-2">
+        <button onClick={onShowLanding} className="flex shrink-0 items-center gap-2">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-indigo-500 to-violet-500 text-white shadow-sm">
             <Sparkles className="h-4.5 w-4.5" aria-hidden="true" />
           </span>
@@ -35,10 +37,10 @@ export function Header({
         </button>
 
         <nav className="ml-2 hidden flex-1 items-center gap-1 sm:flex" aria-label="Primary navigation">
-          <HeaderNavItem icon={LayoutGrid} label="Tools" active={activeView === 'tools'} onClick={onShowTools} />
           <HeaderNavItem icon={Shapes} label="Categories" active={activeView === 'categories'} onClick={onShowCategories} />
           <HeaderNavItem icon={Building2} label="Organizations" active={activeView === 'organizations'} onClick={onShowOrganizations} />
           <HeaderNavItem icon={BookOpen} label="Libraries" active={activeView === 'libraries'} onClick={onShowLibraries} />
+          <HeaderNavItem icon={ScrollText} label="References" active={activeView === 'references'} onClick={onShowReferences} />
         </nav>
 
         <div className="flex shrink-0 items-center gap-1.5">
@@ -81,7 +83,7 @@ function HeaderNavItem({
   active,
   onClick,
 }: {
-  icon: typeof LayoutGrid
+  icon: typeof Shapes
   label: string
   active: boolean
   onClick: () => void

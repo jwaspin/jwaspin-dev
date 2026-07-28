@@ -10,6 +10,7 @@ export const backend: Tool[] = [
     tags: ['node', 'http'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/expressjs/express',
   },
   {
     id: 'fastify',
@@ -19,6 +20,7 @@ export const backend: Tool[] = [
     categoryId: 'backend',
     tags: ['node', 'performance'],
     pricing: 'free',
+    githubUrl: 'https://github.com/fastify/fastify',
   },
   {
     id: 'nestjs',
@@ -28,6 +30,7 @@ export const backend: Tool[] = [
     categoryId: 'backend',
     tags: ['node', 'typescript', 'enterprise'],
     pricing: 'free',
+    githubUrl: 'https://github.com/nestjs/nest',
   },
   {
     id: 'django',
@@ -38,6 +41,7 @@ export const backend: Tool[] = [
     tags: ['python', 'full-stack'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/django/django',
   },
   {
     id: 'flask',
@@ -47,6 +51,7 @@ export const backend: Tool[] = [
     categoryId: 'backend',
     tags: ['python', 'micro'],
     pricing: 'free',
+    githubUrl: 'https://github.com/pallets/flask',
   },
   {
     id: 'fastapi',
@@ -57,6 +62,7 @@ export const backend: Tool[] = [
     tags: ['python', 'api', 'async'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/fastapi/fastapi',
   },
   {
     id: 'rails',
@@ -66,6 +72,7 @@ export const backend: Tool[] = [
     categoryId: 'backend',
     tags: ['ruby', 'full-stack'],
     pricing: 'free',
+    githubUrl: 'https://github.com/rails/rails',
   },
   {
     id: 'spring-boot',
@@ -75,6 +82,7 @@ export const backend: Tool[] = [
     categoryId: 'backend',
     tags: ['java', 'enterprise'],
     pricing: 'free',
+    githubUrl: 'https://github.com/spring-projects/spring-boot',
   },
   {
     id: 'laravel',
@@ -84,6 +92,7 @@ export const backend: Tool[] = [
     categoryId: 'backend',
     tags: ['php', 'full-stack'],
     pricing: 'free',
+    githubUrl: 'https://github.com/laravel/laravel',
   },
   {
     id: 'gin',
@@ -93,6 +102,7 @@ export const backend: Tool[] = [
     categoryId: 'backend',
     tags: ['go', 'performance'],
     pricing: 'free',
+    githubUrl: 'https://github.com/gin-gonic/gin',
   },
   {
     id: 'actix-web',
@@ -102,6 +112,7 @@ export const backend: Tool[] = [
     categoryId: 'backend',
     tags: ['rust', 'performance'],
     pricing: 'free',
+    githubUrl: 'https://github.com/actix/actix-web',
   },
   {
     id: 'aspnet-core',
@@ -111,6 +122,7 @@ export const backend: Tool[] = [
     categoryId: 'backend',
     tags: ['dotnet', 'enterprise'],
     pricing: 'free',
+    githubUrl: 'https://github.com/dotnet/aspnetcore',
   },
   {
     id: 'phoenix',
@@ -120,6 +132,7 @@ export const backend: Tool[] = [
     categoryId: 'backend',
     tags: ['elixir', 'realtime'],
     pricing: 'free',
+    githubUrl: 'https://github.com/phoenixframework/phoenix',
   },
   {
     id: 'koa',
@@ -129,6 +142,7 @@ export const backend: Tool[] = [
     categoryId: 'backend',
     tags: ['node', 'middleware'],
     pricing: 'free',
+    githubUrl: 'https://github.com/koajs/koa',
   },
   {
     id: 'hono',
@@ -138,6 +152,7 @@ export const backend: Tool[] = [
     categoryId: 'backend',
     tags: ['typescript', 'edge', 'web-standards'],
     pricing: 'free',
+    githubUrl: 'https://github.com/honojs/hono',
   },
   {
     id: 'elysia',
@@ -147,5 +162,6 @@ export const backend: Tool[] = [
     categoryId: 'backend',
     tags: ['typescript', 'bun', 'api'],
     pricing: 'free',
+    githubUrl: 'https://github.com/elysiajs/elysia',
   },
 ]

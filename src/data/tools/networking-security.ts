@@ -10,6 +10,7 @@ export const networkingSecurity: Tool[] = [
     tags: ['web-server', 'reverse-proxy', 'load-balancer'],
     pricing: 'freemium',
     featured: true,
+    githubUrl: 'https://github.com/nginx/nginx',
   },
   {
     id: 'wireshark',
@@ -20,6 +21,7 @@ export const networkingSecurity: Tool[] = [
     tags: ['packets', 'network-analysis'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/wireshark/wireshark',
   },
   {
     id: 'caddy',
@@ -29,6 +31,7 @@ export const networkingSecurity: Tool[] = [
     categoryId: 'networking-security',
     tags: ['web-server', 'reverse-proxy', 'https'],
     pricing: 'free',
+    githubUrl: 'https://github.com/caddyserver/caddy',
   },
   {
     id: 'apache-http-server',
@@ -38,6 +41,7 @@ export const networkingSecurity: Tool[] = [
     categoryId: 'networking-security',
     tags: ['web-server', 'http'],
     pricing: 'free',
+    githubUrl: 'https://github.com/apache/httpd',
   },
   {
     id: 'nmap',
@@ -47,6 +51,17 @@ export const networkingSecurity: Tool[] = [
     categoryId: 'networking-security',
     tags: ['network-scanner', 'security'],
     pricing: 'free',
+    githubUrl: 'https://github.com/nmap/nmap',
+  },
+  {
+    id: 'owasp-zap',
+    name: 'OWASP ZAP',
+    description: 'Open-source web application security scanner for finding vulnerabilities during development and testing.',
+    url: 'https://www.zaproxy.org/docs/',
+    categoryId: 'networking-security',
+    tags: ['security', 'vulnerability-scanning'],
+    pricing: 'free',
+    githubUrl: 'https://github.com/zaproxy/zaproxy',
   },
   {
     id: 'mitmproxy',
@@ -56,6 +71,7 @@ export const networkingSecurity: Tool[] = [
     categoryId: 'networking-security',
     tags: ['proxy', 'debugging', 'security'],
     pricing: 'free',
+    githubUrl: 'https://github.com/mitmproxy/mitmproxy',
   },
   {
     id: 'traefik',
@@ -65,6 +81,7 @@ export const networkingSecurity: Tool[] = [
     categoryId: 'networking-security',
     tags: ['reverse-proxy', 'load-balancer', 'cloud-native'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/traefik/traefik',
   },
   {
     id: 'tailscale',
@@ -74,6 +91,7 @@ export const networkingSecurity: Tool[] = [
     categoryId: 'networking-security',
     tags: ['vpn', 'wireguard', 'zero-trust'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/tailscale/tailscale',
   },
   {
     id: 'haproxy',
@@ -83,6 +101,7 @@ export const networkingSecurity: Tool[] = [
     categoryId: 'networking-security',
     tags: ['load-balancer', 'proxy'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/haproxy/haproxy',
   },
   {
     id: 'vault',
@@ -93,6 +112,7 @@ export const networkingSecurity: Tool[] = [
     tags: ['secrets', 'encryption', 'hashicorp'],
     pricing: 'freemium',
     featured: true,
+    githubUrl: 'https://github.com/hashicorp/vault',
   },
   {
     id: 'consul',
@@ -102,6 +122,7 @@ export const networkingSecurity: Tool[] = [
     categoryId: 'networking-security',
     tags: ['service-discovery', 'service-mesh', 'hashicorp'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/hashicorp/consul',
   },
   {
     id: 'boundary',
@@ -111,5 +132,6 @@ export const networkingSecurity: Tool[] = [
     categoryId: 'networking-security',
     tags: ['remote-access', 'zero-trust', 'hashicorp'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/hashicorp/boundary',
   },
 ]
