@@ -9,6 +9,7 @@ import { cssUi } from './tools/css-ui'
 import { stateData } from './tools/state-data'
 import { databases } from './tools/databases'
 import { apiTools } from './tools/api-tools'
+import { auth } from './tools/auth'
 import { networkingSecurity } from './tools/networking-security'
 import { design } from './tools/design'
 import { aiMl } from './tools/ai-ml'
@@ -42,6 +43,7 @@ export const tools: Tool[] = [
   ...stateData,
   ...databases,
   ...apiTools,
+  ...auth,
   ...networkingSecurity,
   ...design,
   ...aiMl,

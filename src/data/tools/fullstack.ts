@@ -10,6 +10,7 @@ export const fullstack: Tool[] = [
     tags: ['react', 'full-stack', 'typescript'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/TanStack/router',
   },
   {
     id: 'tanstack-router',
@@ -19,6 +20,7 @@ export const fullstack: Tool[] = [
     categoryId: 'fullstack',
     tags: ['router', 'react', 'typescript'],
     pricing: 'free',
+    githubUrl: 'https://github.com/TanStack/router',
   },
   {
     id: 'trpc',
@@ -29,6 +31,7 @@ export const fullstack: Tool[] = [
     tags: ['rpc', 'typescript', 'api'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/trpc/trpc',
   },
   {
     id: 'orpc',
@@ -38,6 +41,7 @@ export const fullstack: Tool[] = [
     categoryId: 'fullstack',
     tags: ['rpc', 'openapi', 'typescript'],
     pricing: 'free',
+    githubUrl: 'https://github.com/unnoq/orpc',
   },
   {
     id: 't3-stack',
@@ -47,6 +51,7 @@ export const fullstack: Tool[] = [
     categoryId: 'fullstack',
     tags: ['nextjs', 'trpc', 'typescript'],
     pricing: 'free',
+    githubUrl: 'https://github.com/t3-oss/create-t3-app',
   },
   {
     id: 'redwoodjs',
@@ -56,6 +61,7 @@ export const fullstack: Tool[] = [
     categoryId: 'fullstack',
     tags: ['react', 'graphql', 'full-stack'],
     pricing: 'free',
+    githubUrl: 'https://github.com/redwoodjs/redwood',
   },
   {
     id: 'wasp',
@@ -65,6 +71,7 @@ export const fullstack: Tool[] = [
     categoryId: 'fullstack',
     tags: ['react', 'nodejs', 'full-stack'],
     pricing: 'free',
+    githubUrl: 'https://github.com/wasp-lang/wasp',
   },
   {
     id: 'blitzjs',
@@ -74,5 +81,6 @@ export const fullstack: Tool[] = [
     categoryId: 'fullstack',
     tags: ['nextjs', 'full-stack', 'typescript'],
     pricing: 'free',
+    githubUrl: 'https://github.com/blitz-js/blitz',
   },
 ]

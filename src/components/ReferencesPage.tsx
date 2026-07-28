@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowUpRight } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import type { Reference, ReferenceSourceType, ReferenceSourceTypeInfo } from '../data/types'
 import { ToolIcon } from './ToolIcon'
 import { GithubMark } from './GithubMark'
@@ -77,34 +77,28 @@ function ReferenceCard({ reference }: { reference: Reference }) {
         className="absolute inset-0 z-0 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
       />
 
-      <div className="flex items-start justify-between gap-2">
-        <div className="flex items-center gap-3">
-          <ToolIcon name={reference.title} url={reference.url} />
-          <div>
-            <h3 className="font-medium leading-tight text-slate-900 dark:text-slate-100">{reference.title}</h3>
-            <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">{reference.author}</p>
-          </div>
-        </div>
-        <div className="flex shrink-0 items-center gap-2">
-          {reference.githubUrl && (
-            <a
-              href={reference.githubUrl}
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label={`${reference.title} on GitHub`}
-              className="relative z-10 mt-0.5 text-slate-400 transition hover:text-indigo-500 dark:text-slate-500 dark:hover:text-indigo-400"
-            >
-              <GithubMark className="h-4 w-4" />
-            </a>
-          )}
-          <ArrowUpRight
-            className="mt-1 h-4 w-4 shrink-0 text-slate-300 transition group-hover:text-indigo-500 dark:text-slate-700"
-            aria-hidden="true"
-          />
+      <div className="flex min-w-0 items-center gap-3">
+        <ToolIcon name={reference.title} url={reference.url} />
+        <div className="min-w-0">
+          <h3 className="truncate font-medium leading-tight text-slate-900 dark:text-slate-100" title={reference.title}>{reference.title}</h3>
+          <p className="mt-0.5 truncate text-xs text-slate-500 dark:text-slate-400" title={reference.author}>{reference.author}</p>
         </div>
       </div>
 
-      <p className="text-sm leading-snug text-slate-600 dark:text-slate-400">{reference.description}</p>
+      <p className={`text-sm leading-snug text-slate-600 dark:text-slate-400 ${reference.githubUrl ? 'pr-9' : ''}`}>{reference.description}</p>
+
+      {reference.githubUrl && (
+        <a
+          href={reference.githubUrl}
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label={`${reference.title} on GitHub`}
+          title="View on GitHub"
+          className="absolute right-3 bottom-3 z-10 flex h-7 w-7 items-center justify-center rounded-lg bg-slate-900 text-white shadow-sm transition hover:bg-indigo-600 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-indigo-400"
+        >
+          <GithubMark className="h-4 w-4" />
+        </a>
+      )}
     </div>
   )
 }

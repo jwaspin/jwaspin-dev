@@ -10,6 +10,7 @@ export const designAssets: Tool[] = [
     tags: ['fonts'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/google/fonts',
   },
   {
     id: 'font-awesome',
@@ -19,6 +20,7 @@ export const designAssets: Tool[] = [
     categoryId: 'design-assets',
     tags: ['icons'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/FortAwesome/Font-Awesome',
   },
   {
     id: 'lucide',
@@ -29,6 +31,7 @@ export const designAssets: Tool[] = [
     tags: ['icons'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/lucide-icons/lucide',
   },
   {
     id: 'heroicons',
@@ -38,6 +41,7 @@ export const designAssets: Tool[] = [
     categoryId: 'design-assets',
     tags: ['icons'],
     pricing: 'free',
+    githubUrl: 'https://github.com/tailwindlabs/heroicons',
   },
   {
     id: 'phosphor-icons',
@@ -47,6 +51,7 @@ export const designAssets: Tool[] = [
     categoryId: 'design-assets',
     tags: ['icons'],
     pricing: 'free',
+    githubUrl: 'https://github.com/phosphor-icons/core',
   },
   {
     id: 'coolors',
@@ -84,6 +89,7 @@ export const designAssets: Tool[] = [
     categoryId: 'design-assets',
     tags: ['icons', 'brand-logos'],
     pricing: 'free',
+    githubUrl: 'https://github.com/simple-icons/simple-icons',
   },
   {
     id: 'colorhunt',

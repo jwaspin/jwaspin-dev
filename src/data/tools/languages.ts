@@ -20,6 +20,7 @@ export const languages: Tool[] = [
     tags: ['web', 'types'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/microsoft/TypeScript',
   },
   {
     id: 'python',
@@ -30,6 +31,7 @@ export const languages: Tool[] = [
     tags: ['scripting', 'data'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/python/cpython',
   },
   {
     id: 'go',
@@ -39,6 +41,7 @@ export const languages: Tool[] = [
     categoryId: 'languages',
     tags: ['systems', 'concurrency'],
     pricing: 'free',
+    githubUrl: 'https://github.com/golang/go',
   },
   {
     id: 'rust',
@@ -49,6 +52,7 @@ export const languages: Tool[] = [
     tags: ['systems', 'performance'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/rust-lang/rust',
   },
   {
     id: 'java',
@@ -58,6 +62,7 @@ export const languages: Tool[] = [
     categoryId: 'languages',
     tags: ['jvm', 'enterprise'],
     pricing: 'free',
+    githubUrl: 'https://github.com/openjdk/jdk',
   },
   {
     id: 'kotlin',
@@ -67,6 +72,7 @@ export const languages: Tool[] = [
     categoryId: 'languages',
     tags: ['jvm', 'android'],
     pricing: 'free',
+    githubUrl: 'https://github.com/JetBrains/kotlin',
   },
   {
     id: 'swift',
@@ -76,6 +82,7 @@ export const languages: Tool[] = [
     categoryId: 'languages',
     tags: ['apple', 'mobile'],
     pricing: 'free',
+    githubUrl: 'https://github.com/swiftlang/swift',
   },
   {
     id: 'dotnet-csharp',
@@ -85,6 +92,7 @@ export const languages: Tool[] = [
     categoryId: 'languages',
     tags: ['microsoft', 'enterprise'],
     pricing: 'free',
+    githubUrl: 'https://github.com/dotnet/runtime',
   },
   {
     id: 'ruby',
@@ -94,6 +102,7 @@ export const languages: Tool[] = [
     categoryId: 'languages',
     tags: ['scripting', 'web'],
     pricing: 'free',
+    githubUrl: 'https://github.com/ruby/ruby',
   },
   {
     id: 'php',
@@ -103,6 +112,7 @@ export const languages: Tool[] = [
     categoryId: 'languages',
     tags: ['web', 'scripting'],
     pricing: 'free',
+    githubUrl: 'https://github.com/php/php-src',
   },
   {
     id: 'cpp',
@@ -121,6 +131,7 @@ export const languages: Tool[] = [
     categoryId: 'languages',
     tags: ['functional', 'concurrency'],
     pricing: 'free',
+    githubUrl: 'https://github.com/elixir-lang/elixir',
   },
   {
     id: 'zig',
@@ -130,6 +141,7 @@ export const languages: Tool[] = [
     categoryId: 'languages',
     tags: ['systems', 'performance'],
     pricing: 'free',
+    githubUrl: 'https://github.com/ziglang/zig',
   },
   {
     id: 'c',
@@ -167,6 +179,7 @@ export const languages: Tool[] = [
     tags: ['javascript', 'runtime', 'server'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/nodejs/node',
   },
   {
     id: 'deno',
@@ -176,6 +189,7 @@ export const languages: Tool[] = [
     categoryId: 'languages',
     tags: ['typescript', 'runtime'],
     pricing: 'free',
+    githubUrl: 'https://github.com/denoland/deno',
   },
   {
     id: 'bun',
@@ -185,6 +199,7 @@ export const languages: Tool[] = [
     categoryId: 'languages',
     tags: ['javascript', 'runtime', 'toolkit'],
     pricing: 'free',
+    githubUrl: 'https://github.com/oven-sh/bun',
   },
   {
     id: 'r',
@@ -203,6 +218,7 @@ export const languages: Tool[] = [
     categoryId: 'languages',
     tags: ['mobile', 'flutter'],
     pricing: 'free',
+    githubUrl: 'https://github.com/dart-lang/sdk',
   },
   {
     id: 'lua',

@@ -19,6 +19,7 @@ export const apiTools: Tool[] = [
     categoryId: 'api-tools',
     tags: ['rest', 'graphql'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/Kong/insomnia',
   },
   {
     id: 'hoppscotch',
@@ -28,6 +29,7 @@ export const apiTools: Tool[] = [
     categoryId: 'api-tools',
     tags: ['rest', 'browser'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/hoppscotch/hoppscotch',
   },
   {
     id: 'bruno',
@@ -37,6 +39,7 @@ export const apiTools: Tool[] = [
     categoryId: 'api-tools',
     tags: ['rest', 'offline', 'git'],
     pricing: 'free',
+    githubUrl: 'https://github.com/usebruno/bruno',
   },
   {
     id: 'openapi',
@@ -47,6 +50,7 @@ export const apiTools: Tool[] = [
     tags: ['spec', 'documentation'],
     pricing: 'freemium',
     featured: true,
+    githubUrl: 'https://github.com/OAI/OpenAPI-Specification',
   },
   {
     id: 'graphql',
@@ -56,6 +60,7 @@ export const apiTools: Tool[] = [
     categoryId: 'api-tools',
     tags: ['graphql', 'spec'],
     pricing: 'free',
+    githubUrl: 'https://github.com/graphql/graphql-spec',
   },
   {
     id: 'json-schema',
@@ -65,6 +70,7 @@ export const apiTools: Tool[] = [
     categoryId: 'api-tools',
     tags: ['json', 'schema', 'validation'],
     pricing: 'free',
+    githubUrl: 'https://github.com/json-schema-org/json-schema-spec',
   },
   {
     id: 'grpc',
@@ -74,6 +80,7 @@ export const apiTools: Tool[] = [
     categoryId: 'api-tools',
     tags: ['rpc', 'protobuf'],
     pricing: 'free',
+    githubUrl: 'https://github.com/grpc/grpc',
   },
   {
     id: 'thunder-client',
@@ -92,6 +99,7 @@ export const apiTools: Tool[] = [
     categoryId: 'api-tools',
     tags: ['cli', 'rest'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/httpie/cli',
   },
   {
     id: 'rapidapi',
@@ -128,5 +136,6 @@ export const apiTools: Tool[] = [
     categoryId: 'api-tools',
     tags: ['cli'],
     pricing: 'free',
+    githubUrl: 'https://github.com/curl/curl',
   },
 ]

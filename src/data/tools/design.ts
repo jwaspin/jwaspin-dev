@@ -20,6 +20,7 @@ export const design: Tool[] = [
     tags: ['whiteboard', 'diagrams'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/excalidraw/excalidraw',
   },
   {
     id: 'drawio',
@@ -29,6 +30,7 @@ export const design: Tool[] = [
     categoryId: 'design',
     tags: ['diagrams', 'flowcharts'],
     pricing: 'free',
+    githubUrl: 'https://github.com/jgraph/drawio',
   },
   {
     id: 'miro',
@@ -48,6 +50,7 @@ export const design: Tool[] = [
     tags: ['diagrams', 'text-to-diagram'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/mermaid-js/mermaid',
   },
   {
     id: 'lucidchart',
@@ -75,6 +78,7 @@ export const design: Tool[] = [
     categoryId: 'design',
     tags: ['uml', 'text-to-diagram'],
     pricing: 'free',
+    githubUrl: 'https://github.com/plantuml/plantuml',
   },
   {
     id: 'penpot',
@@ -84,6 +88,7 @@ export const design: Tool[] = [
     categoryId: 'design',
     tags: ['ui', 'open-source'],
     pricing: 'free',
+    githubUrl: 'https://github.com/penpot/penpot',
   },
   {
     id: 'sketch',
@@ -102,6 +107,7 @@ export const design: Tool[] = [
     categoryId: 'design',
     tags: ['whiteboard', 'sdk'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/tldraw/tldraw',
   },
   {
     id: 'figjam',

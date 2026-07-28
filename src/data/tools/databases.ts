@@ -10,6 +10,7 @@ export const databases: Tool[] = [
     tags: ['sql', 'relational'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/postgres/postgres',
   },
   {
     id: 'mysql',
@@ -19,6 +20,7 @@ export const databases: Tool[] = [
     categoryId: 'databases',
     tags: ['sql', 'relational'],
     pricing: 'free',
+    githubUrl: 'https://github.com/mysql/mysql-server',
   },
   {
     id: 'sqlite',
@@ -37,6 +39,7 @@ export const databases: Tool[] = [
     categoryId: 'databases',
     tags: ['sql', 'analytics', 'embedded'],
     pricing: 'free',
+    githubUrl: 'https://github.com/duckdb/duckdb',
   },
   {
     id: 'mongodb',
@@ -47,6 +50,7 @@ export const databases: Tool[] = [
     tags: ['nosql', 'document'],
     pricing: 'freemium',
     featured: true,
+    githubUrl: 'https://github.com/mongodb/mongo',
   },
   {
     id: 'redis',
@@ -57,6 +61,7 @@ export const databases: Tool[] = [
     tags: ['cache', 'key-value'],
     pricing: 'freemium',
     featured: true,
+    githubUrl: 'https://github.com/redis/redis',
   },
   {
     id: 'prisma',
@@ -67,6 +72,7 @@ export const databases: Tool[] = [
     tags: ['orm', 'typescript'],
     pricing: 'freemium',
     featured: true,
+    githubUrl: 'https://github.com/prisma/prisma',
   },
   {
     id: 'drizzle-orm',
@@ -76,6 +82,7 @@ export const databases: Tool[] = [
     categoryId: 'databases',
     tags: ['orm', 'typescript'],
     pricing: 'free',
+    githubUrl: 'https://github.com/drizzle-team/drizzle-orm',
   },
   {
     id: 'typeorm',
@@ -85,6 +92,7 @@ export const databases: Tool[] = [
     categoryId: 'databases',
     tags: ['orm', 'typescript'],
     pricing: 'free',
+    githubUrl: 'https://github.com/typeorm/typeorm',
   },
   {
     id: 'supabase',
@@ -95,6 +103,7 @@ export const databases: Tool[] = [
     tags: ['baas', 'postgres'],
     pricing: 'freemium',
     featured: true,
+    githubUrl: 'https://github.com/supabase/supabase',
   },
   {
     id: 'planetscale',
@@ -131,6 +140,7 @@ export const databases: Tool[] = [
     categoryId: 'databases',
     tags: ['postgres', 'serverless'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/neondatabase/neon',
   },
   {
     id: 'cockroachdb',
@@ -140,6 +150,7 @@ export const databases: Tool[] = [
     categoryId: 'databases',
     tags: ['sql', 'distributed'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/cockroachdb/cockroach',
   },
   {
     id: 'mariadb',
@@ -149,6 +160,7 @@ export const databases: Tool[] = [
     categoryId: 'databases',
     tags: ['sql', 'relational'],
     pricing: 'free',
+    githubUrl: 'https://github.com/MariaDB/server',
   },
   {
     id: 'sqlalchemy',
@@ -158,6 +170,7 @@ export const databases: Tool[] = [
     categoryId: 'databases',
     tags: ['orm', 'python'],
     pricing: 'free',
+    githubUrl: 'https://github.com/sqlalchemy/sqlalchemy',
   },
   {
     id: 'clickhouse',
@@ -167,6 +180,7 @@ export const databases: Tool[] = [
     categoryId: 'databases',
     tags: ['sql', 'analytics', 'columnar'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/ClickHouse/ClickHouse',
   },
   {
     id: 'turso',
@@ -176,6 +190,7 @@ export const databases: Tool[] = [
     categoryId: 'databases',
     tags: ['sqlite', 'edge', 'serverless'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/tursodatabase/libsql',
   },
   {
     id: 'kysely',
@@ -185,6 +200,7 @@ export const databases: Tool[] = [
     categoryId: 'databases',
     tags: ['query-builder', 'typescript', 'sql'],
     pricing: 'free',
+    githubUrl: 'https://github.com/kysely-org/kysely',
   },
   {
     id: 'sql-server',
@@ -203,6 +219,7 @@ export const databases: Tool[] = [
     categoryId: 'databases',
     tags: ['nosql', 'distributed', 'wide-column'],
     pricing: 'free',
+    githubUrl: 'https://github.com/apache/cassandra',
   },
   {
     id: 'neo4j',
@@ -212,6 +229,7 @@ export const databases: Tool[] = [
     categoryId: 'databases',
     tags: ['graph', 'nosql'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/neo4j/neo4j',
   },
   {
     id: 'dbeaver',
@@ -221,6 +239,7 @@ export const databases: Tool[] = [
     categoryId: 'databases',
     tags: ['database-client', 'sql'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/dbeaver/dbeaver',
   },
   {
     id: 'sequelize',

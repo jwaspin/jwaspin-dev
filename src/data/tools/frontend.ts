@@ -10,6 +10,7 @@ export const frontend: Tool[] = [
     tags: ['ui', 'components'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/facebook/react',
   },
   {
     id: 'vue',
@@ -20,6 +21,7 @@ export const frontend: Tool[] = [
     tags: ['ui', 'components'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/vuejs/core',
   },
   {
     id: 'svelte',
@@ -29,6 +31,7 @@ export const frontend: Tool[] = [
     categoryId: 'frontend',
     tags: ['ui', 'compiler'],
     pricing: 'free',
+    githubUrl: 'https://github.com/sveltejs/svelte',
   },
   {
     id: 'angular',
@@ -38,6 +41,7 @@ export const frontend: Tool[] = [
     categoryId: 'frontend',
     tags: ['ui', 'enterprise'],
     pricing: 'free',
+    githubUrl: 'https://github.com/angular/angular',
   },
   {
     id: 'solidjs',
@@ -47,6 +51,7 @@ export const frontend: Tool[] = [
     categoryId: 'frontend',
     tags: ['ui', 'reactive'],
     pricing: 'free',
+    githubUrl: 'https://github.com/solidjs/solid',
   },
   {
     id: 'nextjs',
@@ -57,6 +62,7 @@ export const frontend: Tool[] = [
     tags: ['react', 'ssr', 'meta-framework'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/vercel/next.js',
   },
   {
     id: 'nuxt',
@@ -66,6 +72,7 @@ export const frontend: Tool[] = [
     categoryId: 'frontend',
     tags: ['vue', 'ssr', 'meta-framework'],
     pricing: 'free',
+    githubUrl: 'https://github.com/nuxt/nuxt',
   },
   {
     id: 'astro',
@@ -75,6 +82,7 @@ export const frontend: Tool[] = [
     categoryId: 'frontend',
     tags: ['static', 'islands', 'meta-framework'],
     pricing: 'free',
+    githubUrl: 'https://github.com/withastro/astro',
   },
   {
     id: 'remix',
@@ -84,6 +92,7 @@ export const frontend: Tool[] = [
     categoryId: 'frontend',
     tags: ['react', 'ssr', 'meta-framework'],
     pricing: 'free',
+    githubUrl: 'https://github.com/remix-run/remix',
   },
   {
     id: 'qwik',
@@ -93,6 +102,7 @@ export const frontend: Tool[] = [
     categoryId: 'frontend',
     tags: ['ui', 'performance'],
     pricing: 'free',
+    githubUrl: 'https://github.com/QwikDev/qwik',
   },
   {
     id: 'htmx',
@@ -102,6 +112,7 @@ export const frontend: Tool[] = [
     categoryId: 'frontend',
     tags: ['html', 'minimal'],
     pricing: 'free',
+    githubUrl: 'https://github.com/bigskysoftware/htmx',
   },
   {
     id: 'preact',
@@ -111,6 +122,7 @@ export const frontend: Tool[] = [
     categoryId: 'frontend',
     tags: ['ui', 'lightweight'],
     pricing: 'free',
+    githubUrl: 'https://github.com/preactjs/preact',
   },
   {
     id: 'alpinejs',
@@ -120,6 +132,7 @@ export const frontend: Tool[] = [
     categoryId: 'frontend',
     tags: ['html', 'minimal'],
     pricing: 'free',
+    githubUrl: 'https://github.com/alpinejs/alpine',
   },
   {
     id: 'lit',
@@ -129,6 +142,7 @@ export const frontend: Tool[] = [
     categoryId: 'frontend',
     tags: ['web-components'],
     pricing: 'free',
+    githubUrl: 'https://github.com/lit/lit',
   },
   {
     id: 'sveltekit',
@@ -138,5 +152,6 @@ export const frontend: Tool[] = [
     categoryId: 'frontend',
     tags: ['svelte', 'ssr', 'meta-framework'],
     pricing: 'free',
+    githubUrl: 'https://github.com/sveltejs/kit',
   },
 ]

@@ -10,6 +10,7 @@ export const testingQa: Tool[] = [
     tags: ['unit-testing', 'javascript'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/jestjs/jest',
   },
   {
     id: 'vitest',
@@ -20,6 +21,7 @@ export const testingQa: Tool[] = [
     tags: ['unit-testing', 'vite'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/vitest-dev/vitest',
   },
   {
     id: 'playwright',
@@ -30,6 +32,7 @@ export const testingQa: Tool[] = [
     tags: ['e2e', 'browser-automation'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/microsoft/playwright',
   },
   {
     id: 'cypress',
@@ -39,6 +42,7 @@ export const testingQa: Tool[] = [
     categoryId: 'testing-qa',
     tags: ['e2e', 'component-testing'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/cypress-io/cypress',
   },
   {
     id: 'selenium',
@@ -48,6 +52,7 @@ export const testingQa: Tool[] = [
     categoryId: 'testing-qa',
     tags: ['browser-automation'],
     pricing: 'free',
+    githubUrl: 'https://github.com/SeleniumHQ/selenium',
   },
   {
     id: 'testing-library',
@@ -57,6 +62,7 @@ export const testingQa: Tool[] = [
     categoryId: 'testing-qa',
     tags: ['unit-testing', 'ui'],
     pricing: 'free',
+    githubUrl: 'https://github.com/testing-library/dom-testing-library',
   },
   {
     id: 'k6',
@@ -66,6 +72,7 @@ export const testingQa: Tool[] = [
     categoryId: 'testing-qa',
     tags: ['load-testing', 'performance'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/grafana/k6',
   },
   {
     id: 'storybook',
@@ -75,6 +82,7 @@ export const testingQa: Tool[] = [
     categoryId: 'testing-qa',
     tags: ['component-testing', 'ui'],
     pricing: 'free',
+    githubUrl: 'https://github.com/storybookjs/storybook',
   },
   {
     id: 'mocha',
@@ -84,6 +92,7 @@ export const testingQa: Tool[] = [
     categoryId: 'testing-qa',
     tags: ['unit-testing', 'javascript'],
     pricing: 'free',
+    githubUrl: 'https://github.com/mochajs/mocha',
   },
   {
     id: 'puppeteer',
@@ -93,6 +102,7 @@ export const testingQa: Tool[] = [
     categoryId: 'testing-qa',
     tags: ['browser-automation'],
     pricing: 'free',
+    githubUrl: 'https://github.com/puppeteer/puppeteer',
   },
   {
     id: 'junit',
@@ -102,6 +112,7 @@ export const testingQa: Tool[] = [
     categoryId: 'testing-qa',
     tags: ['unit-testing', 'java'],
     pricing: 'free',
+    githubUrl: 'https://github.com/junit-team/junit5',
   },
   {
     id: 'webdriverio',
@@ -111,6 +122,7 @@ export const testingQa: Tool[] = [
     categoryId: 'testing-qa',
     tags: ['browser-automation', 'mobile'],
     pricing: 'free',
+    githubUrl: 'https://github.com/webdriverio/webdriverio',
   },
   {
     id: 'cucumber',
@@ -120,6 +132,7 @@ export const testingQa: Tool[] = [
     categoryId: 'testing-qa',
     tags: ['bdd'],
     pricing: 'free',
+    githubUrl: 'https://github.com/cucumber/cucumber-js',
   },
   {
     id: 'msw',
@@ -129,6 +142,7 @@ export const testingQa: Tool[] = [
     categoryId: 'testing-qa',
     tags: ['mocking', 'api', 'browser'],
     pricing: 'free',
+    githubUrl: 'https://github.com/mswjs/msw',
   },
   {
     id: 'testcontainers',
@@ -138,6 +152,7 @@ export const testingQa: Tool[] = [
     categoryId: 'testing-qa',
     tags: ['integration-testing', 'containers'],
     pricing: 'free',
+    githubUrl: 'https://github.com/testcontainers/testcontainers-java',
   },
   {
     id: 'pytest',
@@ -147,6 +162,7 @@ export const testingQa: Tool[] = [
     categoryId: 'testing-qa',
     tags: ['python', 'unit-testing'],
     pricing: 'free',
+    githubUrl: 'https://github.com/pytest-dev/pytest',
   },
   {
     id: 'axe-core',

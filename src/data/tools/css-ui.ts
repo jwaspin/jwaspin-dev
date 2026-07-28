@@ -10,6 +10,7 @@ export const cssUi: Tool[] = [
     tags: ['css', 'utility-first'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/tailwindlabs/tailwindcss',
   },
   {
     id: 'bootstrap',
@@ -19,6 +20,7 @@ export const cssUi: Tool[] = [
     categoryId: 'css-ui',
     tags: ['css', 'components'],
     pricing: 'free',
+    githubUrl: 'https://github.com/twbs/bootstrap',
   },
   {
     id: 'chakra-ui',
@@ -28,6 +30,7 @@ export const cssUi: Tool[] = [
     categoryId: 'css-ui',
     tags: ['react', 'components', 'accessibility'],
     pricing: 'free',
+    githubUrl: 'https://github.com/chakra-ui/chakra-ui',
   },
   {
     id: 'mui',
@@ -37,6 +40,7 @@ export const cssUi: Tool[] = [
     categoryId: 'css-ui',
     tags: ['react', 'material-design'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/mui/material-ui',
   },
   {
     id: 'shadcn-ui',
@@ -47,6 +51,7 @@ export const cssUi: Tool[] = [
     tags: ['react', 'components', 'tailwind'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/shadcn-ui/ui',
   },
   {
     id: 'radix-ui',
@@ -56,6 +61,7 @@ export const cssUi: Tool[] = [
     categoryId: 'css-ui',
     tags: ['react', 'primitives', 'accessibility'],
     pricing: 'free',
+    githubUrl: 'https://github.com/radix-ui/primitives',
   },
   {
     id: 'ant-design',
@@ -65,6 +71,7 @@ export const cssUi: Tool[] = [
     categoryId: 'css-ui',
     tags: ['react', 'enterprise'],
     pricing: 'free',
+    githubUrl: 'https://github.com/ant-design/ant-design',
   },
   {
     id: 'bulma',
@@ -74,6 +81,7 @@ export const cssUi: Tool[] = [
     categoryId: 'css-ui',
     tags: ['css', 'flexbox'],
     pricing: 'free',
+    githubUrl: 'https://github.com/jgthms/bulma',
   },
   {
     id: 'styled-components',
@@ -83,6 +91,7 @@ export const cssUi: Tool[] = [
     categoryId: 'css-ui',
     tags: ['react', 'css-in-js'],
     pricing: 'free',
+    githubUrl: 'https://github.com/styled-components/styled-components',
   },
   {
     id: 'sass',
@@ -92,6 +101,7 @@ export const cssUi: Tool[] = [
     categoryId: 'css-ui',
     tags: ['css', 'preprocessor'],
     pricing: 'free',
+    githubUrl: 'https://github.com/sass/dart-sass',
   },
   {
     id: 'mantine',
@@ -101,6 +111,7 @@ export const cssUi: Tool[] = [
     categoryId: 'css-ui',
     tags: ['react', 'components'],
     pricing: 'free',
+    githubUrl: 'https://github.com/mantinedev/mantine',
   },
   {
     id: 'headless-ui',
@@ -110,6 +121,7 @@ export const cssUi: Tool[] = [
     categoryId: 'css-ui',
     tags: ['react', 'vue', 'accessibility'],
     pricing: 'free',
+    githubUrl: 'https://github.com/tailwindlabs/headlessui',
   },
   {
     id: 'daisyui',
@@ -119,6 +131,7 @@ export const cssUi: Tool[] = [
     categoryId: 'css-ui',
     tags: ['tailwind', 'components'],
     pricing: 'free',
+    githubUrl: 'https://github.com/saadeghi/daisyui',
   },
   {
     id: 'emotion',
@@ -128,6 +141,7 @@ export const cssUi: Tool[] = [
     categoryId: 'css-ui',
     tags: ['css-in-js'],
     pricing: 'free',
+    githubUrl: 'https://github.com/emotion-js/emotion',
   },
   {
     id: 'unocss',
@@ -137,5 +151,6 @@ export const cssUi: Tool[] = [
     categoryId: 'css-ui',
     tags: ['utility-css', 'atomic-css'],
     pricing: 'free',
+    githubUrl: 'https://github.com/unocss/unocss',
   },
 ]

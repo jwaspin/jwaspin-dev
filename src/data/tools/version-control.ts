@@ -10,6 +10,7 @@ export const versionControl: Tool[] = [
     tags: ['vcs'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/git/git',
   },
   {
     id: 'github',
@@ -29,6 +30,7 @@ export const versionControl: Tool[] = [
     categoryId: 'version-control',
     tags: ['hosting', 'ci-cd'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/gitlab-org/gitlab',
   },
   {
     id: 'bitbucket',
@@ -65,6 +67,7 @@ export const versionControl: Tool[] = [
     categoryId: 'version-control',
     tags: ['self-hosted'],
     pricing: 'free',
+    githubUrl: 'https://github.com/go-gitea/gitea',
   },
   {
     id: 'conventional-commits',
@@ -74,6 +77,7 @@ export const versionControl: Tool[] = [
     categoryId: 'version-control',
     tags: ['convention'],
     pricing: 'free',
+    githubUrl: 'https://github.com/conventional-commits/conventionalcommits.org',
   },
   {
     id: 'git-lfs',
@@ -83,6 +87,7 @@ export const versionControl: Tool[] = [
     categoryId: 'version-control',
     tags: ['large-files'],
     pricing: 'free',
+    githubUrl: 'https://github.com/git-lfs/git-lfs',
   },
   {
     id: 'jujutsu',
@@ -92,5 +97,6 @@ export const versionControl: Tool[] = [
     categoryId: 'version-control',
     tags: ['vcs', 'git-compatible'],
     pricing: 'free',
+    githubUrl: 'https://github.com/jj-vcs/jj',
   },
 ]

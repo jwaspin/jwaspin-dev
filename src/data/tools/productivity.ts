@@ -20,6 +20,7 @@ export const productivity: Tool[] = [
     tags: ['browser-compatibility'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/Fyrd/caniuse',
   },
   {
     id: 'devdocs',
@@ -30,6 +31,17 @@ export const productivity: Tool[] = [
     tags: ['documentation', 'search'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/freeCodeCamp/devdocs',
+  },
+  {
+    id: 'read-the-docs',
+    name: 'Read the Docs',
+    description: 'Builds and hosts documentation automatically from your repository, built for Sphinx and MkDocs.',
+    url: 'https://docs.readthedocs.io/',
+    categoryId: 'productivity',
+    tags: ['documentation', 'hosting'],
+    pricing: 'freemium',
+    githubUrl: 'https://github.com/readthedocs/readthedocs.org',
   },
   {
     id: 'codesandbox',
@@ -39,6 +51,7 @@ export const productivity: Tool[] = [
     categoryId: 'productivity',
     tags: ['sandbox', 'online-ide'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/codesandbox/codesandbox-client',
   },
   {
     id: 'stackblitz',
@@ -66,6 +79,7 @@ export const productivity: Tool[] = [
     categoryId: 'productivity',
     tags: ['code-screenshot'],
     pricing: 'free',
+    githubUrl: 'https://github.com/carbon-app/carbon',
   },
   {
     id: 'cheat-sh',
@@ -75,6 +89,7 @@ export const productivity: Tool[] = [
     categoryId: 'productivity',
     tags: ['cli', 'cheat-sheet'],
     pricing: 'free',
+    githubUrl: 'https://github.com/chubin/cheat.sh',
   },
   {
     id: 'jsoncrack',
@@ -84,6 +99,7 @@ export const productivity: Tool[] = [
     categoryId: 'productivity',
     tags: ['json', 'visualization'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/AykutSarac/jsoncrack.com',
   },
   {
     id: 'diffchecker',
@@ -102,6 +118,7 @@ export const productivity: Tool[] = [
     categoryId: 'productivity',
     tags: ['cli', 'shell'],
     pricing: 'free',
+    githubUrl: 'https://github.com/idank/explainshell',
   },
   {
     id: 'transform-tools',
@@ -129,6 +146,7 @@ export const productivity: Tool[] = [
     categoryId: 'productivity',
     tags: ['cli', 'cheat-sheet'],
     pricing: 'free',
+    githubUrl: 'https://github.com/tldr-pages/tldr',
   },
   {
     id: 'gnu-stow',

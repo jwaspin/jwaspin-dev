@@ -30,6 +30,7 @@ export const aiMl: Tool[] = [
     tags: ['models', 'datasets', 'open-source'],
     pricing: 'freemium',
     featured: true,
+    githubUrl: 'https://github.com/huggingface/transformers',
   },
   {
     id: 'langchain',
@@ -39,6 +40,7 @@ export const aiMl: Tool[] = [
     categoryId: 'ai-ml',
     tags: ['agents', 'framework'],
     pricing: 'free',
+    githubUrl: 'https://github.com/langchain-ai/langchain',
   },
   {
     id: 'llamaindex',
@@ -48,6 +50,7 @@ export const aiMl: Tool[] = [
     categoryId: 'ai-ml',
     tags: ['rag', 'framework'],
     pricing: 'free',
+    githubUrl: 'https://github.com/run-llama/llama_index',
   },
   {
     id: 'ollama',
@@ -104,6 +107,7 @@ export const aiMl: Tool[] = [
     categoryId: 'ai-ml',
     tags: ['mlops', 'experiment-tracking'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/wandb/wandb',
   },
   {
     id: 'google-ai-studio',
@@ -131,6 +135,7 @@ export const aiMl: Tool[] = [
     categoryId: 'ai-ml',
     tags: ['llm', 'open-source'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/mistralai/mistral-inference',
   },
   {
     id: 'perplexity',

@@ -10,6 +10,7 @@ export const mobile: Tool[] = [
     tags: ['ios', 'android', 'react'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/facebook/react-native',
   },
   {
     id: 'flutter',
@@ -20,6 +21,7 @@ export const mobile: Tool[] = [
     tags: ['ios', 'android', 'dart'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/flutter/flutter',
   },
   {
     id: 'expo',
@@ -29,6 +31,7 @@ export const mobile: Tool[] = [
     categoryId: 'mobile',
     tags: ['react-native', 'tooling'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/expo/expo',
   },
   {
     id: 'swiftui',
@@ -56,6 +59,7 @@ export const mobile: Tool[] = [
     categoryId: 'mobile',
     tags: ['hybrid', 'web'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/ionic-team/ionic-framework',
   },
   {
     id: 'maui',
@@ -65,6 +69,7 @@ export const mobile: Tool[] = [
     categoryId: 'mobile',
     tags: ['dotnet', 'cross-platform'],
     pricing: 'free',
+    githubUrl: 'https://github.com/dotnet/maui',
   },
   {
     id: 'capacitor',
@@ -74,6 +79,7 @@ export const mobile: Tool[] = [
     categoryId: 'mobile',
     tags: ['hybrid', 'web'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/ionic-team/capacitor',
   },
   {
     id: 'nativescript',
@@ -83,6 +89,7 @@ export const mobile: Tool[] = [
     categoryId: 'mobile',
     tags: ['ios', 'android'],
     pricing: 'free',
+    githubUrl: 'https://github.com/NativeScript/NativeScript',
   },
   {
     id: 'kotlin-multiplatform',
@@ -92,5 +99,6 @@ export const mobile: Tool[] = [
     categoryId: 'mobile',
     tags: ['kotlin', 'cross-platform'],
     pricing: 'free',
+    githubUrl: 'https://github.com/JetBrains/kotlin',
   },
 ]

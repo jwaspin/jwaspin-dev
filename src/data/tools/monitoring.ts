@@ -10,6 +10,7 @@ export const monitoring: Tool[] = [
     tags: ['error-tracking'],
     pricing: 'freemium',
     featured: true,
+    githubUrl: 'https://github.com/getsentry/sentry',
   },
   {
     id: 'datadog',
@@ -29,6 +30,7 @@ export const monitoring: Tool[] = [
     tags: ['dashboards', 'metrics'],
     pricing: 'freemium',
     featured: true,
+    githubUrl: 'https://github.com/grafana/grafana',
   },
   {
     id: 'prometheus',
@@ -38,6 +40,7 @@ export const monitoring: Tool[] = [
     categoryId: 'monitoring',
     tags: ['metrics', 'alerting'],
     pricing: 'free',
+    githubUrl: 'https://github.com/prometheus/prometheus',
   },
   {
     id: 'new-relic',
@@ -92,6 +95,7 @@ export const monitoring: Tool[] = [
     categoryId: 'monitoring',
     tags: ['logs', 'search'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/elastic/elasticsearch',
   },
   {
     id: 'opentelemetry',
@@ -102,6 +106,7 @@ export const monitoring: Tool[] = [
     tags: ['tracing', 'metrics', 'open-standard'],
     pricing: 'free',
     featured: true,
+    githubUrl: 'https://github.com/open-telemetry/opentelemetry-specification',
   },
   {
     id: 'loki',
@@ -111,6 +116,7 @@ export const monitoring: Tool[] = [
     categoryId: 'monitoring',
     tags: ['logs', 'grafana'],
     pricing: 'freemium',
+    githubUrl: 'https://github.com/grafana/loki',
   },
   {
     id: 'jaeger',
@@ -120,5 +126,6 @@ export const monitoring: Tool[] = [
     categoryId: 'monitoring',
     tags: ['tracing', 'distributed-systems'],
     pricing: 'free',
+    githubUrl: 'https://github.com/jaegertracing/jaeger',
   },
 ]
